@@ -1,4 +1,4 @@
-# Capacitación Eclesiástica y Gobierno Presbiteriano
+﻿# Capacitación Eclesiástica y Gobierno Presbiteriano
 
 Libro de Enseñanza Interactivo para la Escuela Bíblica Dominical (Adultos 2026).  
 **Iglesia Presbiteriana Divino Salvador**  
