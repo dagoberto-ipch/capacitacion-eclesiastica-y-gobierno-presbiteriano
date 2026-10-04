@@ -1,0 +1,46 @@
+# Configuracion de electron-builder para el .exe del Libro de Ensenanza IPCh.
+#
+# Solo se empaqueta lo necesario: la app es un HTML autocontenido de ~160 KB, asi
+# que el tamano final lo determina casi por completo el runtime de Electron.
+
+appId: cl.ipch.capacitacion
+productName: Libro Capacitacion IPCh
+copyright: Iglesia Presbiteriana Divino Salvador
+
+directories:
+  output: dist
+  buildResources: icons
+
+# Lista blanca. El HTML duplicado "2 - Libro Interactivo (HTML).html" no entra:
+# es identico a index.html y solo suma peso.
+files:
+  - index.html
+  - manifest.webmanifest
+  - icons/**
+  - electron/main.js
+  - '!**/*.map'
+
+asar: true
+compression: maximum
+
+# Deja el binario solo con espanol e ingles: recorta ~90 MB.
+electronLanguages:
+  - es
+  - en-US
+
+win:
+  icon: icons/icon-256.png
+  artifactName: Libro-IPCh-${version}-portable.${ext}
+  target:
+    - target: portable
+      arch:
+        - x64
+
+portable:
+  # Un solo archivo que se abre con doble clic, sin instalar.
+  requestExecutionLevel: user
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: Libro-IPCh-${version}-instalador.${ext}

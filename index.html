@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a192f">
+<meta name="description" content="Libro interactivo de capacitacion eclesiastica y gobierno presbiteriano. Escuela Biblica Dominical, Adultos 2026.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Libro IPCh">
+<link rel="mask-icon" href="./icons/icon-192.png" color="#0a192f">
 <title>Libro de Ense&ntilde;anza &middot; IPCH Divino Salvador</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -1330,6 +1340,17 @@ scrollspy();
     a.parentNode.insertBefore(frag, a.nextSibling);
   });
 })();
+</script>
+
+<!-- service worker: habilita la instalacion como app y el uso sin conexion -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function (e) {
+      console.warn('Service worker no registrado:', e);
+    });
+  });
+}
 </script>
 </body>
 </html>

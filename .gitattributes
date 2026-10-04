@@ -1,0 +1,10 @@
+# Normaliza los finales de linea en el repositorio.
+# Motivo: en Windows git convertia LF a CRLF al tocar los archivos, lo que
+# ensucia los diffs y genera avisos en cada commit.
+* text=auto eol=lf
+
+# Los binarios no se tocan
+*.png binary
+*.jpg binary
+*.ico binary
+*.webmanifest text eol=lf
