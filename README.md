@@ -9,13 +9,12 @@ Libro de Enseñanza interactivo para la Escuela Bíblica Dominical (Adultos 2026
 
 👉 **[Libro Interactivo](https://dagoberto-ipch.github.io/capacitacion-eclesiastica-y-gobierno-presbiteriano/)**
 
-A los alumnos se les manda **un link de WhatsApp**, no un archivo. Es la mejor
-opción por tres razones:
+A los alumnos se les manda **un link de WhatsApp**, no un archivo.
 
 | | Link (PWA) | Archivo `.exe` |
 |---|---|---|
-| Peso en el chat | 0 KB | ~100 MB por alumno |
-| Funciona en iPhone | Sí | No (no es Windows) |
+| Peso en el chat | 0 KB | 1 MB (mínimo viable) |
+| Funciona en iPhone | Sí | No |
 | Se actualiza | Solo, al día siguiente | Hay que reenviar el archivo |
 | Instalar | Un toque | Descomprimir y abrir |
 
@@ -61,7 +60,9 @@ https://dagoberto-ipch.github.io/capacitacion-eclesiastica-y-gobierno-presbiteri
 | `tools/servir.ps1` | Servidor local para probar antes de publicar. |
 | `publicar.ps1` | Sube todo al repo de GitHub Pages. |
 | `assets-logo-original.png` | Logo IPCh tal como viene incrustado en el HTML. Solo fuente para los íconos; no se publica. |
-| `electron/`, `package.json`, `electron-builder.yml`, `generar-exe.ps1`, `.github/` | Base del `.exe` de Windows. **No se publica** (ver abajo). |
+
+No hay `package.json` ni `node_modules`: no hay build. Lo que se edita es lo que
+se sirve.
 
 ### Por qué `index.html` pesa 160 KB y no usa librerías
 
@@ -82,6 +83,16 @@ powershell -ExecutionPolicy Bypass -File publicar.ps1             # sube a main
 GitHub Pages sirve la rama `main` desde la raíz, así que el push publica la web
 directamente. Tarda entre 1 y 3 minutos.
 
+## Probar en local
+
+```bash
+powershell -ExecutionPolicy Bypass -File tools\servir.ps1
+```
+
+Abre <http://localhost:8123>. Hace falta porque el service worker no funciona
+con `file://`. Para ver cómo queda sin conexión: deja de ejecutar el script y
+recarga; la página tiene que seguir apareciendo.
+
 ## Regenerar los íconos
 
 ```bash
@@ -96,61 +107,34 @@ y se vuelve a correr el script.
 > a `libro-ipch-v2`) para que los teléfonos que ya instalaron la app reciban los
 > íconos nuevos.
 
-## Probar en local
-
-```bash
-powershell -ExecutionPolicy Bypass -File tools\servir.ps1
-```
-
-Abre <http://localhost:8123>. Hace falta porque el service worker no funciona
-con `file://`. Para ver cómo queda sin conexión: deja de ejecutar el script y
-recarga; la página tiene que seguir apareciendo.
-
 ---
 
-## Sobre el `.exe` de Windows
+## Por qué no hay un `.exe`
 
-Se dejó el andamiaje de Electron listo en este repositorio, pero **no se publica**
-y no hace falta para repartir el libro. Motivo: un `.exe` de Electron pesa del
-orden de 100 MB, y mandarlo por WhatsApp a cada alumno no funciona bien. El `.exe`
-tampoco corre en iPhone ni en Android, así que igual dejaba fuera a parte del curso.
+El proyecto empezó como un ejecutable de Windows y se descartó a favor de repartir
+un link. Las razones concretas:
 
-Si alguna vez hace falta de verdad (por ejemplo un salón conalus sin internet en
-Windows), se publica con:
+- **No sirve para WhatsApp.** El `.exe` más chico posible (WebView2, que ya viene
+  en Windows 10 y 11) pesaba 1-3 MB; el de Electron, unos 100 MB. Ninguno es
+  cómodo mandar a cada alumno en un chat, sobre todo con datos móviles.
+- **No corre en iPhone ni en Android.** Hubo alumnos sin acceso a un computador.
+- **Hay que reenviarlo.** Si cambia el temario, con el link todos lo ven al día
+  siguiente; con el archivo, hay que mandarlo de nuevo a todos.
+- **Las notas.** El libro guarda apuntes y avance de lectura en `localStorage`. Un
+  ejecutable que sirviera los archivos con `file://` perdería todo eso, porque
+  Chromium bloquea `localStorage` en orígenes opacos. Hacerlo bien exigía un
+  origen propio (C++/WinRT o un protocolo como `app://`), y en la máquina donde se
+  desarrollaba no había compilador de C++ ni de .NET. El link no tiene ese
+  problema.
 
-```bash
-powershell -ExecutionPolicy Bypass -File publicar.ps1 -ConExe
-```
-
-Eso sube el código de Electron y el workflow que compila el `.exe` en GitHub
-Actions. **Requiere un token con el scope `workflow`**, que el de la CLI no trae
-por defecto:
-
-```bash
-gh auth refresh -h github.com -s workflow
-```
-
-Luego, en el repo: pestaña **Actions** → **Build .exe** → **Run workflow**.
-
-Para compilarlo en local hace falta Node.js LTS:
-
-```bash
-powershell -ExecutionPolicy Bypass -File generar-exe.ps1
-```
-
-Sale en `dist/Libro-IPCh-1.0.0-portable.exe`, portable y sin instalación.
-
-### Nota sobre el origen de la app dentro del `.exe`
-
-`electron/main.js` sirve los archivos con un protocolo propio (`app://`) en vez de
-`file://`. No es un detalle: con `file://` el origen es opaco y Chromium bloquea
-`localStorage`, que es donde la app guarda las notas y el avance de lectura. Con
-`app://` las notas se mantienen al cerrar y reabrir el programa.
+Si alguna vez hace falta de verdad —un aula sin internet, por ejemplo— lo
+correcto es un `.exe` nativo con WebView2 y un origen propio para las notas,
+compilado en GitHub Actions. No es un `.exe` que se pueda generar sin un
+compilador, ni aunque el libro sea un solo HTML.
 
 ---
 
 ## Archivo duplicado
 
 `2 - Libro Interactivo (HTML).html` es una copia byte a byte de `index.html` que
-ya existía en el repo. Se dejó intacta y no se incluye en el `.exe`. Si nadie la
-usa, se puede borrar.
+ya existía en el repo. Se dejó intacta. Si nadie la usa, se puede borrar.
