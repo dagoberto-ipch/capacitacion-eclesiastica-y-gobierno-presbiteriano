@@ -45,7 +45,9 @@ ol.lecciones li{background:#fff;border:1px solid var(--line);border-radius:9px;
 ol.lecciones .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--celeste);
                 color:#0e5a8a;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:14px;
                 display:flex;align-items:center;justify-content:center}
-ol.lecciones .cuerpo{flex:1;min-width:220px}
+/* min-width:0 y no 220px: con 220 fijo el cuerpo no baja nunca de ahi, y en un
+   celu el titulo no tiene lugar. Con 0, el espacio que sobra es el que queda. */
+ol.lecciones .cuerpo{flex:1;min-width:0}
 ol.lecciones .tit{display:block;font-size:17px;color:var(--navy);line-height:1.35}
 ol.lecciones .arts{display:block;font-size:12px;font-family:'Segoe UI',sans-serif;color:var(--grisclaro);letter-spacing:.05em;margin-top:2px}
 ol.lecciones .enlaces{display:flex;gap:7px;flex-wrap:wrap}
@@ -55,6 +57,24 @@ ol.lecciones .enlaces a{font-family:'Segoe UI',sans-serif;font-size:12px;font-we
 ol.lecciones .enlaces a:hover{border-color:var(--azul);color:#0e5a8a;background:var(--celeste)}
 ol.lecciones .enlaces a.principal{background:var(--navy);border-color:var(--navy);color:#fff}
 ol.lecciones .enlaces a.principal:hover{background:var(--navy2);color:#fff}
+/* Los dos botones de descarga llevan ancho fijo, para que formen columna. El
+   nombre queda a la izquierda y el peso a la derecha, y asi los tres botones de
+   cada fila terminan en la misma vertical. */
+ol.lecciones .enlaces a.pdf,
+ol.lecciones .enlaces a.pptx{display:inline-flex;align-items:baseline;justify-content:space-between;gap:10px}
+ol.lecciones .enlaces a.pdf{width:132px}
+ol.lecciones .enlaces a.pptx{width:192px}
+ol.lecciones .enlaces .peso{font-variant-numeric:tabular-nums}
+ol.lecciones .enlaces a{max-width:100%}
+@media (max-width:660px){
+  /* En un celu los tres botones no caben en una linea. Vuelven a medir lo que
+     necesitan, que es lo que se lee bien. */
+  ol.lecciones li{padding:14px 16px}
+  ol.lecciones .enlaces{width:100%}
+  ol.lecciones .enlaces a.pdf,
+  ol.lecciones .enlaces a.pptx{width:auto;flex:1 1 auto}
+  ol.lecciones .enlaces a.principal{flex:1 1 100%}
+}
 ol.lecciones li.falta{background:#fafbfc;opacity:.72}
 ol.lecciones li.falta .n{background:#eef1f5;color:var(--grisclaro)}
 ol.lecciones li.falta .tit{color:var(--grisclaro)}
@@ -84,8 +104,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">La naturaleza de la membresía y el Rol Nacional</span><span class="arts">Arts. 8 - 9</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion1/">Ver la presentación</a>
-<a href="../presentacion-leccion1/Presentacion-Leccion1-Naturaleza-de-la-Membresia.pdf">PDF (400 KB)</a>
-<a href="pptx/Presentacion-Leccion1-Naturaleza-de-la-Membresia.pptx">PowerPoint (1794 KB)</a>
+<a class="pdf" href="../presentacion-leccion1/Presentacion-Leccion1-Naturaleza-de-la-Membresia.pdf"><span>PDF</span><span class="peso">400 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion1-Naturaleza-de-la-Membresia.pptx"><span>PowerPoint</span><span class="peso">1794 KB</span></a>
 </span>
 </li>
 <li>
@@ -93,8 +113,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">Vías de recepción e incorporación</span><span class="arts">Arts. 10, 14, 16</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion2/">Ver la presentación</a>
-<a href="../presentacion-leccion2/Presentacion-Leccion2-Vias-de-Recepcion.pdf">PDF (447 KB)</a>
-<a href="pptx/Presentacion-Leccion2-Vias-de-Recepcion.pptx">PowerPoint (1717 KB)</a>
+<a class="pdf" href="../presentacion-leccion2/Presentacion-Leccion2-Vias-de-Recepcion.pdf"><span>PDF</span><span class="peso">447 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion2-Vias-de-Recepcion.pptx"><span>PowerPoint</span><span class="peso">1717 KB</span></a>
 </span>
 </li>
 <li>
@@ -102,8 +122,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">Derechos y privilegios de los miembros comulgantes</span><span class="arts">Art. 11</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion3/">Ver la presentación</a>
-<a href="../presentacion-leccion3/Presentacion-Leccion3-derechos-y-privilegios-de-los-miembros-comulga.pdf">PDF (390 KB)</a>
-<a href="pptx/Presentacion-Leccion3-derechos-y-privilegios-de-los-miembros-comulga.pptx">PowerPoint (1671 KB)</a>
+<a class="pdf" href="../presentacion-leccion3/Presentacion-Leccion3-derechos-y-privilegios-de-los-miembros-comulga.pdf"><span>PDF</span><span class="peso">390 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion3-derechos-y-privilegios-de-los-miembros-comulga.pptx"><span>PowerPoint</span><span class="peso">1671 KB</span></a>
 </span>
 </li>
 <li>
@@ -111,8 +131,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">Deberes, fidelidad y mayordomía</span><span class="arts">Art. 12</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion4/">Ver la presentación</a>
-<a href="../presentacion-leccion4/Presentacion-Leccion4-deberes-fidelidad-y-mayordomia.pdf">PDF (451 KB)</a>
-<a href="pptx/Presentacion-Leccion4-deberes-fidelidad-y-mayordomia.pptx">PowerPoint (1879 KB)</a>
+<a class="pdf" href="../presentacion-leccion4/Presentacion-Leccion4-deberes-fidelidad-y-mayordomia.pdf"><span>PDF</span><span class="peso">451 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion4-deberes-fidelidad-y-mayordomia.pptx"><span>PowerPoint</span><span class="peso">1879 KB</span></a>
 </span>
 </li>
 <li>
@@ -120,8 +140,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">Traslados, perdida de membresía y cuidado de los no comulgantes</span><span class="arts">Arts. 13, 15, 17, 18</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion5/">Ver la presentación</a>
-<a href="../presentacion-leccion5/Presentacion-Leccion5-traslados-perdida-de-membresia-y-cuidado-de-lo.pdf">PDF (508 KB)</a>
-<a href="pptx/Presentacion-Leccion5-traslados-perdida-de-membresia-y-cuidado-de-lo.pptx">PowerPoint (1886 KB)</a>
+<a class="pdf" href="../presentacion-leccion5/Presentacion-Leccion5-traslados-perdida-de-membresia-y-cuidado-de-lo.pdf"><span>PDF</span><span class="peso">508 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion5-traslados-perdida-de-membresia-y-cuidado-de-lo.pptx"><span>PowerPoint</span><span class="peso">1886 KB</span></a>
 </span>
 </li>
 </ol>
@@ -132,8 +152,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">La iglesia local y las Asambleas Congregaciónales</span><span class="arts">Arts. 19 - 27</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion6/">Ver la presentación</a>
-<a href="../presentacion-leccion6/Presentacion-Leccion6-la-iglesia-local-y-las-asambleas-congregaciona.pdf">PDF (505 KB)</a>
-<a href="pptx/Presentacion-Leccion6-la-iglesia-local-y-las-asambleas-congregaciona.pptx">PowerPoint (1934 KB)</a>
+<a class="pdf" href="../presentacion-leccion6/Presentacion-Leccion6-la-iglesia-local-y-las-asambleas-congregaciona.pdf"><span>PDF</span><span class="peso">505 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion6-la-iglesia-local-y-las-asambleas-congregaciona.pptx"><span>PowerPoint</span><span class="peso">1934 KB</span></a>
 </span>
 </li>
 <li>
@@ -141,8 +161,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">Los oficiales de la iglesia: Pastores, Presbíteros y Diáconos</span><span class="arts">Arts. 28 - 33, 73 - 84</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion7/">Ver la presentación</a>
-<a href="../presentacion-leccion7/Presentacion-Leccion7-los-oficiales-de-la-iglesia-pastores-presbiter.pdf">PDF (555 KB)</a>
-<a href="pptx/Presentacion-Leccion7-los-oficiales-de-la-iglesia-pastores-presbiter.pptx">PowerPoint (1841 KB)</a>
+<a class="pdf" href="../presentacion-leccion7/Presentacion-Leccion7-los-oficiales-de-la-iglesia-pastores-presbiter.pdf"><span>PDF</span><span class="peso">555 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion7-los-oficiales-de-la-iglesia-pastores-presbiter.pptx"><span>PowerPoint</span><span class="peso">1841 KB</span></a>
 </span>
 </li>
 <li>
@@ -150,8 +170,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">El Ministro del Evangelio y la Candidatura Pastoral</span><span class="arts">Arts. 34 - 72</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion8/">Ver la presentación</a>
-<a href="../presentacion-leccion8/Presentacion-Leccion8-el-ministro-del-evangelio-y-la-candidatura-pas.pdf">PDF (555 KB)</a>
-<a href="pptx/Presentacion-Leccion8-el-ministro-del-evangelio-y-la-candidatura-pas.pptx">PowerPoint (1968 KB)</a>
+<a class="pdf" href="../presentacion-leccion8/Presentacion-Leccion8-el-ministro-del-evangelio-y-la-candidatura-pas.pdf"><span>PDF</span><span class="peso">555 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion8-el-ministro-del-evangelio-y-la-candidatura-pas.pptx"><span>PowerPoint</span><span class="peso">1968 KB</span></a>
 </span>
 </li>
 <li>
@@ -159,8 +179,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">El Consitorio y la Junta Diaconal</span><span class="arts">Arts. 78 - 80, 94 - 100</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion9/">Ver la presentación</a>
-<a href="../presentacion-leccion9/Presentacion-Leccion9-el-consitorio-y-la-junta-diaconal.pdf">PDF (530 KB)</a>
-<a href="pptx/Presentacion-Leccion9-el-consitorio-y-la-junta-diaconal.pptx">PowerPoint (2097 KB)</a>
+<a class="pdf" href="../presentacion-leccion9/Presentacion-Leccion9-el-consitorio-y-la-junta-diaconal.pdf"><span>PDF</span><span class="peso">530 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion9-el-consitorio-y-la-junta-diaconal.pptx"><span>PowerPoint</span><span class="peso">2097 KB</span></a>
 </span>
 </li>
 <li>
@@ -168,8 +188,8 @@ ol.lecciones .estado{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(
 <span class="cuerpo"><span class="tit">Los Consejos Superiores: Presbiterio, Sinodo y Asamblea General</span><span class="arts">Arts. 85 - 93, 101 - 122</span></span>
 <span class="enlaces">
 <a class="principal" href="../presentacion-leccion10/">Ver la presentación</a>
-<a href="../presentacion-leccion10/Presentacion-Leccion10-los-consejos-superiores-presbiterio-sinodo-y-a.pdf">PDF (555 KB)</a>
-<a href="pptx/Presentacion-Leccion10-los-consejos-superiores-presbiterio-sinodo-y-a.pptx">PowerPoint (2071 KB)</a>
+<a class="pdf" href="../presentacion-leccion10/Presentacion-Leccion10-los-consejos-superiores-presbiterio-sinodo-y-a.pdf"><span>PDF</span><span class="peso">555 KB</span></a>
+<a class="pptx" href="pptx/Presentacion-Leccion10-los-consejos-superiores-presbiterio-sinodo-y-a.pptx"><span>PowerPoint</span><span class="peso">2071 KB</span></a>
 </span>
 </li>
 </ol>
