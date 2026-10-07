@@ -621,6 +621,40 @@ ol.li li b{color:#fff}
     s.appendChild(m);
   });
 
+  // ---- modo captura -------------------------------------------------
+  //  Con ?captura=1 la pagina deja de ser una presentacion y se vuelve
+  //  una tira vertical con todas las laminas apiladas, a 1280x720 exactos y sin
+  //  la interfaz. Es lo que captura capturar.ps1 para armar las imagenes del
+  //  PowerPoint y el PDF: una sola pasada del navegador en vez de veinte.
+  var capturando = /[?&]captura/.test(location.search);
+  if (capturando) {
+    document.documentElement.style.background = '#fff';
+    document.body.style.cssText = 'overflow:visible;margin:0;padding:0;background:#fff';
+    var w = document.getElementById('wrap');
+    w.style.cssText = 'position:static;display:block;inset:auto';
+    var st = document.getElementById('stage');
+    st.style.cssText = 'position:static;width:1280px;height:auto;transform:none;box-shadow:none';
+    ['prog','cont','ayuda','gral'].forEach(function(id){
+      var e = document.getElementById(id);
+      if (e) e.style.display = 'none';
+    });
+    slides.forEach(function(s){
+      s.classList.add('on');
+      s.style.cssText = 'display:flex;position:relative;inset:auto;width:1280px;height:720px;animation:none;flex:0 0 auto';
+    });
+    // Sin la animacion de entrada, para que ninguna lamina salga a medio pintar.
+    var estilos = document.createElement('style');
+    estilos.textContent = '@keyframes entra{from{opacity:1;transform:none}to{opacity:1;transform:none}}';
+    document.head.appendChild(estilos);
+    // Se avisa por el titulo, que es lo unico que puede leer el script de captura.
+    var avisar = function(){
+      document.title = 'listo:' + total + ':' + (document.fonts ? document.fonts.status : 'x');
+    };
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function(){ setTimeout(avisar, 120); }); }
+    else { window.addEventListener('load', function(){ setTimeout(avisar, 120); }); }
+    return;   // en modo captura no se registra nada mas
+  }
+
   function pintar(){
     slides.forEach(function(s,i){ s.classList.toggle('on', i===idx); });
     minis.forEach(function(m,i){ m.classList.toggle('cur', i===idx); });
