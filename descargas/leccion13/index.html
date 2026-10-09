@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Descargar · Leccion 13</title>
+<meta name="theme-color" content="#0a192f">
+<style>
+/* Estilo de las paginas de descarga.
+
+   Pensado para que se lea bien en un celular y en un computador por igual, porque
+   el material lo van a usar equipos distintos. Se evita que la tabla se salga en
+   pantalla angosta: pasa a una columna con la regla de @media de abajo. */
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a192f; --navy2:#12263f; --azul:#29abe2; --oro:#c5a059;
+  --gris:#42505f; --grisclaro:#8894a4; --papel:#fbfcfd; --line:#e3e8ee;
+  --celeste:#f2f8fc; --tinta:#25303d;
+}
+body{
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  background:var(--papel); color:var(--tinta); line-height:1.6;
+  -webkit-text-size-adjust:100%;
+}
+.envoltura{max-width:980px;margin:0 auto;padding:0 22px}
+
+.cabecera{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:38px 0 30px;margin-bottom:30px}
+.volver{color:var(--azul);text-decoration:none;font-size:14px;font-weight:600;display:inline-block;margin-bottom:16px}
+.volver:hover{text-decoration:underline}
+.rotulo{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:700}
+.cabecera h1{font-size:34px;margin:8px 0 6px;line-height:1.2}
+.subtitulo{color:#b6c4d2;font-size:17px}
+
+.bloque{margin-bottom:34px}
+.bloque h2{font-size:21px;color:var(--navy);margin-bottom:6px;padding-bottom:9px;border-bottom:3px solid var(--oro);display:inline-block}
+.nota{color:var(--gris);font-size:15px;margin:10px 0 16px;max-width:760px}
+
+.opciones{display:flex;flex-direction:column;gap:12px}
+.opcion{
+  display:flex;align-items:center;gap:16px;background:#fff;
+  border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.opcion.principal{background:#fffdf7}
+.glifo{font-size:26px;width:42px;flex:0 0 42px;text-align:center}
+.cuerpo{flex:1;min-width:0}
+.cuerpo h4{font-size:17px;color:var(--navy);margin-bottom:3px}
+.cuerpo p{font-size:14px;color:var(--gris)}
+.btn{
+  flex:0 0 auto;background:var(--navy);color:#fff;text-decoration:none;
+  padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;white-space:nowrap;
+}
+.btn:hover{background:var(--navy2)}
+.btn.no{background:var(--line);color:var(--gris)}
+
+.tabla{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tabla th,.tabla td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+.tabla th{background:var(--celeste);color:var(--navy);font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.tabla tr:last-child td{border-bottom:0}
+.tabla td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+
+.pie{text-align:center;color:var(--grisclaro);font-size:13px;padding:30px 22px 40px;border-top:1px solid var(--line);margin-top:20px}
+
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.tarjeta{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.tarjeta .num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul);font-weight:700}
+.tarjeta h4{font-size:16px;color:var(--navy);margin:6px 0 4px;line-height:1.35}
+.tarjeta .arts{font-size:13px;color:var(--grisclaro);margin-bottom:12px}
+.tarjeta .enlaces{display:flex;gap:8px;flex-wrap:wrap}
+.tarjeta .enlaces a{font-size:13px;text-decoration:none;color:var(--azul);font-weight:600;border:1px solid var(--azul);border-radius:6px;padding:6px 10px}
+.tarjeta .enlaces a:hover{background:var(--celeste)}
+
+.grupo{margin-bottom:30px}
+.grupo h2{font-size:19px;color:var(--navy);margin-bottom:4px;padding-bottom:8px;border-bottom:3px solid var(--oro);display:inline-block}
+.grupo .nota{margin-bottom:14px}
+
+/* En pantalla angosta, las opciones y la tabla se reacomodan. */
+@media (max-width:640px){
+  .cabecera h1{font-size:27px}
+  .opcion{flex-wrap:wrap}
+  .btn{width:100%;text-align:center}
+  .tabla,.tabla tbody,.tabla tr,.tabla th,.tabla td{display:block;width:100%}
+  .tabla thead{display:none}
+  .tabla tr{border-bottom:2px solid var(--line)}
+  .tabla td{border:0;padding:7px 14px}
+  .tabla td:first-child{padding-top:12px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--grisclaro)}
+  .tabla tr:last-child td{padding-bottom:14px}
+}
+</style>
+</head>
+<body>
+<header class="cabecera"><div class="envoltura">
+  <a class="volver" href="/descargas/">&larr; Volver a las descargas</a>
+  <div class="rotulo">Capacitacion IPCh</div>
+  <h1>Leccion 13</h1>
+  <p class="subtitulo">Sanciónes o Censuras Eclesiasticas &middot; Arts. 160 - 174</p>
+</div></header>
+<main class="envoltura">
+<section class="bloque">
+  <h2>Presentacion</h2>
+  <div class="opciones">
+    <div class="opcion principal" style="border-top:3px solid var(--oro)">
+      <div class="glifo">&#9733;</div>
+      <div class="cuerpo"><h4>Windows, Mac, Android e iPhone</h4>
+      <p>Un solo archivo para los cuatro sistemas. Se instala desde el navegador y despues queda con icono propio. Funciona sin internet.</p></div>
+      <a class="btn" href="/presentacion-leccion13/">Abrir</a>
+    </div>
+  </div>
+</section>
+<section class="bloque">
+  <h2>Descargar archivos</h2>
+  <div class="opciones">
+    <div class="opcion"><div class="glifo">&#128209;</div>
+      <div class="cuerpo"><h4>PDF</h4><p>Se abre en cualquier equipo y en cualquier celular, sin instalar nada.</p></div>
+      <a class="btn" href="/presentacion-leccion13/Presentacion-Leccion13-sanciones-o-censuras-eclesiasticas.pdf">Descargar</a></div>
+    <div class="opcion"><div class="glifo">&#128196;</div>
+      <div class="cuerpo"><h4>PowerPoint</h4><p>Para editar la presentacion antes de usarla.</p></div>
+      <a class="btn" href="/descargas/pptx/Presentacion-Leccion13-sanciones-o-censuras-eclesiasticas.pptx">Descargar</a></div>
+  </div>
+</section>
+<section class="bloque">
+  <h2>Como se instala, segun el equipo</h2>
+  <table class="tabla">
+    <tr><th>Equipo</th><th>Como se instala</th></tr>
+    <tr><td>Windows</td><td>Edge o Chrome &rarr; menu &rarr; <b>Instalar esta aplicacion</b></td></tr>
+    <tr><td>Mac</td><td>Safari &rarr; Archivo &rarr; <b>Anadir al Dock</b></td></tr>
+    <tr><td>Android</td><td>Chrome &rarr; <b>Anadir a pantalla de inicio</b></td></tr>
+    <tr><td>iPhone</td><td>Safari &rarr; Compartir &rarr; <b>Anadir a pantalla de inicio</b></td></tr>
+  </table>
+</section>
+</main>
+<footer class="pie">Iglesia Presbiteriana Divino Salvador &middot; Leccion 13</footer>
+</body>
+</html>

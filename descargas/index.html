@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Descargar · Capacitacion IPCh</title>
+<meta name="theme-color" content="#0a192f">
+<style>
+/* Estilo de las paginas de descarga.
+
+   Pensado para que se lea bien en un celular y en un computador por igual, porque
+   el material lo van a usar equipos distintos. Se evita que la tabla se salga en
+   pantalla angosta: pasa a una columna con la regla de @media de abajo. */
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a192f; --navy2:#12263f; --azul:#29abe2; --oro:#c5a059;
+  --gris:#42505f; --grisclaro:#8894a4; --papel:#fbfcfd; --line:#e3e8ee;
+  --celeste:#f2f8fc; --tinta:#25303d;
+}
+body{
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  background:var(--papel); color:var(--tinta); line-height:1.6;
+  -webkit-text-size-adjust:100%;
+}
+.envoltura{max-width:980px;margin:0 auto;padding:0 22px}
+
+.cabecera{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:38px 0 30px;margin-bottom:30px}
+.volver{color:var(--azul);text-decoration:none;font-size:14px;font-weight:600;display:inline-block;margin-bottom:16px}
+.volver:hover{text-decoration:underline}
+.rotulo{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:700}
+.cabecera h1{font-size:34px;margin:8px 0 6px;line-height:1.2}
+.subtitulo{color:#b6c4d2;font-size:17px}
+
+.bloque{margin-bottom:34px}
+.bloque h2{font-size:21px;color:var(--navy);margin-bottom:6px;padding-bottom:9px;border-bottom:3px solid var(--oro);display:inline-block}
+.nota{color:var(--gris);font-size:15px;margin:10px 0 16px;max-width:760px}
+
+.opciones{display:flex;flex-direction:column;gap:12px}
+.opcion{
+  display:flex;align-items:center;gap:16px;background:#fff;
+  border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.opcion.principal{background:#fffdf7}
+.glifo{font-size:26px;width:42px;flex:0 0 42px;text-align:center}
+.cuerpo{flex:1;min-width:0}
+.cuerpo h4{font-size:17px;color:var(--navy);margin-bottom:3px}
+.cuerpo p{font-size:14px;color:var(--gris)}
+.btn{
+  flex:0 0 auto;background:var(--navy);color:#fff;text-decoration:none;
+  padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;white-space:nowrap;
+}
+.btn:hover{background:var(--navy2)}
+.btn.no{background:var(--line);color:var(--gris)}
+
+.tabla{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tabla th,.tabla td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+.tabla th{background:var(--celeste);color:var(--navy);font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.tabla tr:last-child td{border-bottom:0}
+.tabla td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+
+.pie{text-align:center;color:var(--grisclaro);font-size:13px;padding:30px 22px 40px;border-top:1px solid var(--line);margin-top:20px}
+
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.tarjeta{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.tarjeta .num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul);font-weight:700}
+.tarjeta h4{font-size:16px;color:var(--navy);margin:6px 0 4px;line-height:1.35}
+.tarjeta .arts{font-size:13px;color:var(--grisclaro);margin-bottom:12px}
+.tarjeta .enlaces{display:flex;gap:8px;flex-wrap:wrap}
+.tarjeta .enlaces a{font-size:13px;text-decoration:none;color:var(--azul);font-weight:600;border:1px solid var(--azul);border-radius:6px;padding:6px 10px}
+.tarjeta .enlaces a:hover{background:var(--celeste)}
+
+.grupo{margin-bottom:30px}
+.grupo h2{font-size:19px;color:var(--navy);margin-bottom:4px;padding-bottom:8px;border-bottom:3px solid var(--oro);display:inline-block}
+.grupo .nota{margin-bottom:14px}
+
+/* En pantalla angosta, las opciones y la tabla se reacomodan. */
+@media (max-width:640px){
+  .cabecera h1{font-size:27px}
+  .opcion{flex-wrap:wrap}
+  .btn{width:100%;text-align:center}
+  .tabla,.tabla tbody,.tabla tr,.tabla th,.tabla td{display:block;width:100%}
+  .tabla thead{display:none}
+  .tabla tr{border-bottom:2px solid var(--line)}
+  .tabla td{border:0;padding:7px 14px}
+  .tabla td:first-child{padding-top:12px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--grisclaro)}
+  .tabla tr:last-child td{padding-bottom:14px}
+}
+</style>
+</head>
+<body>
+<header class="cabecera"><div class="envoltura">
+  <a class="volver" href="./">&larr; Volver al indice</a>
+  <div class="rotulo">Iglesia Presbiteriana de Chile</div>
+  <h1>Descargar el material</h1>
+  <p class="subtitulo">Quince lecciones, el Estatuto y el libro interactivo, con la alternativa indicada para cada equipo.</p>
+</div></header>
+<main class="envoltura">
+<section class="bloque">
+  <h2>Material general</h2>
+  <p class="nota">El Estatuto y el libro de lecciones se pueden instalar como aplicacion en los cuatro sistemas, y tambien tienen APK para Android y portable para Windows.</p>
+  <div class="rejilla">
+    <div class="tarjeta">
+      <div class="num">Material general</div>
+      <h4>Estatuto de la Iglesia Presbiteriana de Chile</h4>
+      <p class="arts">Los nueve libros y los 295 articulos, en version digital y buscable.</p>
+      <div class="enlaces">
+        <a href="https://dagoberto-ipch.github.io/estatuto-ipch/">Instalar desde el navegador</a>
+        <a href="/https://dagoberto-ipch.github.io/estatuto-ipch/descargas/Estatuto-IPCh-1.0.0.apk">APK (Android) (1 MB)</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Material general</div>
+      <h4>Libro de lecciones interactivo</h4>
+      <p class="arts">El curso completo en un solo archivo, con notas del alumno.</p>
+      <div class="enlaces">
+        <a href="https://dagoberto-ipch.github.io/capacitacion-eclesiastica-y-gobierno-presbiteriano/libro/">Instalar desde el navegador</a>
+        <a href="/https://dagoberto-ipch.github.io/capacitacion-eclesiastica-y-gobierno-presbiteriano/descargas/Libro-IPCh-1.0.0.apk">APK (Android) (0,6 MB)</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Material general</div>
+      <h4>Cuaderno del curso</h4>
+      <p class="arts">Los quince temas con los articulos del Estatuto, para llevar en papel.</p>
+      <div class="enlaces">
+        <a href="https://dagoberto-ipch.github.io/capacitacion-eclesiastica-y-gobierno-presbiteriano/cuaderno/">Abrir el cuaderno</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bloque">
+  <h2>Las quince lecciones</h2>
+  <p class="nota">Cada leccion tiene su pagina con el PDF, el PowerPoint y la presentacion instalable.</p>
+  <div class="rejilla">
+    <div class="tarjeta">
+      <div class="num">Leccion 1</div>
+      <h4>La naturaleza de la membresía y el Rol Nacional</h4>
+      <p class="arts">Arts. 8 - 9</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion1/">Descargas</a>
+        <a href="/presentacion-leccion1/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 2</div>
+      <h4>Vías de recepción e incorporación</h4>
+      <p class="arts">Arts. 10, 14, 16</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion2/">Descargas</a>
+        <a href="/presentacion-leccion2/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 3</div>
+      <h4>Derechos y privilegios de los miembros comulgantes</h4>
+      <p class="arts">Art. 11</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion3/">Descargas</a>
+        <a href="/presentacion-leccion3/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 4</div>
+      <h4>Deberes, fidelidad y mayordomía</h4>
+      <p class="arts">Art. 12</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion4/">Descargas</a>
+        <a href="/presentacion-leccion4/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 5</div>
+      <h4>Traslados, perdida de membresía y cuidado de los no comulgantes</h4>
+      <p class="arts">Arts. 13, 15, 17, 18</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion5/">Descargas</a>
+        <a href="/presentacion-leccion5/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 6</div>
+      <h4>La iglesia local y las Asambleas Congregaciónales</h4>
+      <p class="arts">Arts. 19 - 27</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion6/">Descargas</a>
+        <a href="/presentacion-leccion6/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 7</div>
+      <h4>Los oficiales de la iglesia: Pastores, Presbíteros y Diáconos</h4>
+      <p class="arts">Arts. 28 - 33, 73 - 84</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion7/">Descargas</a>
+        <a href="/presentacion-leccion7/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 8</div>
+      <h4>El Ministro del Evangelio y la Candidatura Pastoral</h4>
+      <p class="arts">Arts. 34 - 72</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion8/">Descargas</a>
+        <a href="/presentacion-leccion8/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 9</div>
+      <h4>El Consitorio y la Junta Diaconal</h4>
+      <p class="arts">Arts. 78 - 80, 94 - 100</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion9/">Descargas</a>
+        <a href="/presentacion-leccion9/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 10</div>
+      <h4>Los Consejos Superiores: Presbiterio, Sinodo y Asamblea General</h4>
+      <p class="arts">Arts. 85 - 93, 101 - 122</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion10/">Descargas</a>
+        <a href="/presentacion-leccion10/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 11</div>
+      <h4>Principios, fines de la Disciplina y naturaleza de las ofensas</h4>
+      <p class="arts">Arts. 123 - 130</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion11/">Descargas</a>
+        <a href="/presentacion-leccion11/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 12</div>
+      <h4>Tribunales Eclesiasticos, Inhabilidades y Competencia</h4>
+      <p class="arts">Arts. 131 - 159</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion12/">Descargas</a>
+        <a href="/presentacion-leccion12/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 13</div>
+      <h4>Sanciónes o Censuras Eclesiasticas</h4>
+      <p class="arts">Arts. 160 - 174</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion13/">Descargas</a>
+        <a href="/presentacion-leccion13/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 14</div>
+      <h4>Los Procedimientos Judiciales (Ordinario y Extraordinario)</h4>
+      <p class="arts">Arts. 175 - 227</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion14/">Descargas</a>
+        <a href="/presentacion-leccion14/">Presentar</a>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="num">Leccion 15</div>
+      <h4>Recursos, Reivindicación, Prescripción y Restauración</h4>
+      <p class="arts">Arts. 230 - 247</p>
+      <div class="enlaces">
+        <a href="/descargas/leccion15/">Descargas</a>
+        <a href="/presentacion-leccion15/">Presentar</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bloque">
+  <h2>Que sirve en cada equipo</h2>
+  <table class="tabla">
+    <tr><th>Equipo</th><th>Como se instala</th></tr>
+    <tr><td>Windows</td><td>Edge o Chrome &rarr; menu &rarr; <b>Instalar esta aplicacion</b></td></tr>
+    <tr><td>Mac</td><td>Safari &rarr; Archivo &rarr; <b>Anadir al Dock</b></td></tr>
+    <tr><td>Android</td><td>Chrome &rarr; <b>Anadir a pantalla de inicio</b></td></tr>
+    <tr><td>iPhone</td><td>Safari &rarr; Compartir &rarr; <b>Anadir a pantalla de inicio</b></td></tr>
+  </table>
+  <p class="nota">Un archivo APK no se puede instalar en iPhone, y una app de Mac o un IPA solo se compilan en un equipo con macOS. Por eso, para Mac e iPhone, la via es la aplicacion web instalable: un solo archivo sirve para los cuatro sistemas, pesa poco y ademas funciona sin internet.</p>
+</section>
+</main>
+<footer class="pie">Iglesia Presbiteriana Divino Salvador</footer>
+</body>
+</html>

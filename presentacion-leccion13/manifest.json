@@ -1,0 +1,25 @@
+{
+    "name":  "Lección 13 · Sanciones: la escala y su fundamento",
+    "short_name":  "Lección 13",
+    "description":  "Capacitacion Eclesiastica y Gobierno Presbiteriano - Iglesia Presbiteriana de Chile",
+    "start_url":  "./Presentacion-Leccion13-sanciones-o-censuras-eclesiasticas.html",
+    "scope":  "./",
+    "display":  "standalone",
+    "orientation":  "landscape",
+    "background_color":  "#0a192f",
+    "theme_color":  "#0a192f",
+    "lang":  "es",
+    "dir":  "ltr",
+    "icons":  [
+                  {
+                      "tipo":  "image/png",
+                      "sizes":  "192x192",
+                      "src":  "icono-192.png"
+                  },
+                  {
+                      "tipo":  "image/png",
+                      "sizes":  "512x512",
+                      "src":  "icono-512.png"
+                  }
+              ]
+}
