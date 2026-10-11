@@ -36,7 +36,7 @@ body{
 /* ---------- diapositiva ---------- */
 .slide{
   position:absolute;inset:0;display:none;overflow:hidden;
-  padding:56px 78px;flex-direction:column;
+  padding:44px 70px;flex-direction:column;
 }
 .slide.on{display:flex;animation:entra .32s ease both}
 @keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -52,25 +52,25 @@ body{
 
 /* ---------- elementos tipográficos ---------- */
 .kick{
-  font-size:15px;letter-spacing:.26em;text-transform:uppercase;
+  font-size:17px;letter-spacing:.26em;text-transform:uppercase;
   color:var(--azul);font-weight:700;
 }
 .claro .kick,.oscuro .kick{color:var(--azul)}
 .blanco .kick{color:#0e7fb8}
-.tit{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#fff;line-height:1.14;margin-top:14px}
+.tit{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#fff;line-height:1.14;margin-top:10px}
 .claro .tit,.blanco .tit{color:var(--navy)}
-.tit.big{font-size:60px}
-.tit.med{font-size:46px}
-.tit.chico{font-size:36px}
-.sub{font-size:20px;line-height:1.62;color:#c2cfdb;margin-top:20px;max-width:940px}
+.tit.big{font-size:64px}
+.tit.med{font-size:50px}
+.tit.chico{font-size:40px}
+.sub{font-size:23px;line-height:1.62;color:#c2cfdb;margin-top:16px;max-width:940px}
 .claro .sub{color:var(--gris)}
 .blanco .sub{color:var(--gris)}
-.regla{height:3px;width:96px;background:var(--oro);margin:26px 0}
+.regla{height:3px;width:96px;background:var(--oro);margin:20px 0}
 
-ul.li{list-style:none;margin-top:26px}
+ul.li{list-style:none;margin-top:20px}
 ul.li li{
-  font-size:25px;line-height:1.46;color:#e6edf4;padding-left:38px;
-  position:relative;margin-bottom:20px;
+  font-size:29px;line-height:1.46;color:#e6edf4;padding-left:38px;
+  position:relative;margin-bottom:14px;
 }
 .claro ul.li li,.blanco ul.li li{color:#2c3947}
 ul.li li::before{
@@ -78,18 +78,18 @@ ul.li li::before{
   background:var(--azul);transform:rotate(45deg);
 }
 .claro ul.li li::before,.blanco ul.li li::before{background:var(--azul)}
-ul.li.chico li{font-size:21px;margin-bottom:14px}
+ul.li.chico li{font-size:24px;margin-bottom:10px}
 ul.li.chico li::before{top:10px;width:9px;height:9px}
 
-ol.li{list-style:none;counter-reset:n;margin-top:26px}
+ol.li{list-style:none;counter-reset:n;margin-top:20px}
 ol.li li{
-  counter-increment:n;font-size:25px;line-height:1.46;color:#e6edf4;
-  padding-left:56px;position:relative;margin-bottom:22px;
+  counter-increment:n;font-size:29px;line-height:1.46;color:#e6edf4;
+  padding-left:56px;position:relative;margin-bottom:16px;
 }
 ol.li li::before{
   content:counter(n);position:absolute;left:0;top:-2px;
   width:38px;height:38px;border-radius:50%;background:var(--azul);
-  color:#062033;font-weight:700;font-size:19px;
+  color:#062033;font-weight:700;font-size:21px;
   display:flex;align-items:center;justify-content:center;
 }
 ol.li li b{color:#fff}
@@ -97,36 +97,36 @@ ol.li li b{color:#fff}
 .claro ol.li li b,.blanco ol.li li b{color:var(--navy)}
 
 .vers{
-  font-family:Georgia,serif;font-size:34px;line-height:1.5;font-style:italic;
+  font-family:Georgia,serif;font-size:38px;line-height:1.5;font-style:italic;
   color:var(--navy);max-width:1020px;
 }
 .oscuro .vers{color:#fff}
-.ref{font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul);font-weight:700;margin-top:26px}
-.nota{font-size:19px;line-height:1.66;color:var(--gris);margin-top:20px;max-width:900px}
+.ref{font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul);font-weight:700;margin-top:20px}
+.nota{font-size:22px;line-height:1.66;color:var(--gris);margin-top:16px;max-width:900px}
 .nota b{color:#0e5a8a}
 
 /* ---------- tablas / tarjetas ---------- */
-.tarjetas{display:grid;gap:20px;margin-top:28px}
+.tarjetas{display:grid;gap:20px;margin-top:22px}
 .tarjetas.c2{grid-template-columns:1fr 1fr}
 .tarjetas.c3{grid-template-columns:repeat(3,1fr)}
 .tarjetas.c5{grid-template-columns:repeat(5,1fr)}
 .tarjeta{
   background:#fff;border:1px solid var(--line);border-top:4px solid var(--azul);
-  border-radius:9px;padding:22px 22px 24px;box-shadow:0 1px 3px rgba(16,32,52,.06);
+  border-radius:9px;padding:18px 20px 20px;box-shadow:0 1px 3px rgba(16,32,52,.06);
 }
 .oscuro .tarjeta{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);border-top-color:var(--oro)}
 .tarjeta .num{
-  font-size:13px;letter-spacing:.16em;font-weight:700;color:var(--azul);
+  font-size:15px;letter-spacing:.16em;font-weight:700;color:var(--azul);
   text-transform:uppercase;margin-bottom:10px;
 }
-.tarjeta h4{font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:9px}
+.tarjeta h4{font-family:Georgia,serif;font-size:26px;font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:7px}
 .oscuro .tarjeta h4{color:#fff}
-.tarjeta p{font-size:17px;line-height:1.6;color:var(--gris)}
+.tarjeta p{font-size:20px;line-height:1.6;color:var(--gris)}
 .oscuro .tarjeta p{color:#c2cfdb}
 
 .aviso{
   background:#fff8e8;border-left:5px solid var(--oro);border-radius:0 10px 10px 0;
-  padding:22px 26px;margin-top:26px;color:#5c4a14;font-size:21px;line-height:1.6;
+  padding:18px 22px;margin-top:20px;color:#5c4a14;font-size:24px;line-height:1.6;
 }
 .aviso b{color:#3d3009}
 
@@ -181,7 +181,7 @@ ol.li li b{color:#fff}
 
 /* ---------- bloque de oracion ---------- */
 .orar{
-  margin-top:30px;padding:22px 28px;border-radius:10px;
+  margin-top:24px;padding:18px 24px;border-radius:10px;
   background:rgba(41,171,226,.10);border-left:4px solid var(--oro);
   font-family:Georgia,serif;font-style:italic;font-size:19px;line-height:1.62;color:#dfe8f0;
   max-width:1010px;
@@ -203,6 +203,52 @@ ol.li li b{color:#fff}
   .slide:last-child{page-break-after:auto}
   #prog,#cont,#ayuda,#gral{display:none!important}
 }
+
+/* ---------- laminas cargadas ----------
+   Con la letra grande, algunas laminas se pasan de los 720 px. Estas cuatro
+   clases aprietan el interlineado, los huecos y el margen interior por peldanos,
+   de menos a mas. El ajuste automatico le pone a cada lamina el peldano mas
+   flojo que le sirve, y no vuelve nunca a uno que ya se sabe que no cabe.
+   El !important hace falta porque el aire va puesto en linea en el marcado,
+   y lo puesto en linea gana. */
+.aprieta-1 ul.li li, .aprieta-1 ol.li li { line-height:1.43 !important; margin-bottom:13px !important; }
+.aprieta-1 ul.li, .aprieta-1 ol.li { margin-top:18px !important; }
+.aprieta-1 .tarjetas, .aprieta-1 .aviso, .aprieta-1 .orar { margin-top:21px !important; }
+.aprieta-1 .sub { margin-top:15px !important; }
+.aprieta-1 .tit { margin-top:10px !important; }
+.aprieta-1 .regla { margin:22px 0 !important; }
+
+.aprieta-2 ul.li li, .aprieta-2 ol.li li { line-height:1.37 !important; margin-bottom:11px !important; }
+.aprieta-2 ul.li, .aprieta-2 ol.li { margin-top:17px !important; }
+.aprieta-2 .tarjetas, .aprieta-2 .aviso, .aprieta-2 .orar { margin-top:20px !important; }
+.aprieta-2 .tarjeta { padding:18px 21px 20px !important; }
+.aprieta-2 .sub { margin-top:14px !important; }
+.aprieta-2 .tit { margin-top:9px !important; }
+.aprieta-2 .regla { margin:20px 0 !important; }
+
+.aprieta-3 ul.li li, .aprieta-3 ol.li li { font-size:28px !important; line-height:1.34 !important; margin-bottom:9px !important; }
+.aprieta-3 ul.li.chico li { line-height:1.32 !important; margin-bottom:8px !important; }
+.aprieta-3 ul.li, .aprieta-3 ol.li { margin-top:15px !important; }
+.aprieta-3 .tarjetas, .aprieta-3 .aviso, .aprieta-3 .orar { margin-top:18px !important; }
+.aprieta-3 .tarjeta { padding:16px 20px 18px !important; }
+.aprieta-3 .tarjeta h4 { font-size:25px !important; margin-bottom:7px !important; }
+.aprieta-3 .sub { margin-top:14px !important; }
+.aprieta-3 .tit { margin-top:9px !important; }
+.aprieta-3 .regla { margin:17px 0 !important; }
+
+.aprieta-4 { padding:30px 48px !important; }
+.aprieta-4 ul.li li, .aprieta-4 ol.li li { font-size:27px !important; line-height:1.29 !important; margin-bottom:8px !important; }
+.aprieta-4 ul.li.chico li { font-size:25px !important; line-height:1.29 !important; margin-bottom:7px !important; }
+.aprieta-4 ul.li, .aprieta-4 ol.li { margin-top:13px !important; }
+.aprieta-4 .tarjetas, .aprieta-4 .aviso, .aprieta-4 .orar { margin-top:15px !important; }
+.aprieta-4 .tarjeta { padding:14px 18px 16px !important; }
+.aprieta-4 .tarjeta p { font-size:19px !important; }
+.aprieta-4 .tarjeta h4 { font-size:24px !important; margin-bottom:6px !important; }
+.aprieta-4 .sub { font-size:22px !important; margin-top:13px !important; }
+.aprieta-4 .vers { margin-top:14px !important; }
+.aprieta-4 .nota { margin-top:13px !important; }
+.aprieta-4 .tit { margin-top:8px !important; }
+.aprieta-4 .regla { margin:14px 0 !important; }
 </style>
 </head>
 <body>
@@ -212,11 +258,11 @@ ol.li li b{color:#fff}
   <!-- 1 · PORTADA -->
   <section class="slide oscuro" data-t="Portada">
     <div class="marca marca-b" style="left:50%;right:auto;top:48px;transform:translateX(-50%);width:112px;height:112px"></div>
-    <div style="text-align:center;margin-top:112px">
+    <div style="text-align:center;margin-top:95px">
       <div class="kick">Escuela Bíblica Dominical · Clase de Adultos · 2026</div>
-      <h1 class="tit med" style="max-width:960px;margin:14px auto 0">Vías de recepción e incorporación</h1>
-      <div style="height:3px;width:110px;background:var(--oro);margin:24px auto"></div>
-      <div class="sub" style="margin:0 auto;text-align:center;max-width:900px;font-size:19px">
+      <h1 class="tit med" style="max-width:960px;margin:12px auto 0">Vías de recepción e incorporación</h1>
+      <div style="height:3px;width:110px;background:var(--oro);margin:20px auto"></div>
+      <div class="sub" style="margin:0 auto;text-align:center;max-width:900px;font-size:23px">
         Capacitación Eclesiástica y Gobierno Presbiteriano<br>
         <b style="color:#fff">Libro Cuarto · De los Miembros · Arts. 10, 14 y 16</b>
       </div>
@@ -229,11 +275,11 @@ ol.li li b{color:#fff}
     <div class="kick">Punto de partida</div>
     <h2 class="tit chico" style="margin-bottom:0">Libro Cuarto — De los Miembros</h2>
     <div class="regla"></div>
-    <p class="nota" style="margin-top:0;font-size:21px">
+    <p class="nota" style="margin-top:0;font-size:26px">
       Este libro abarca los <b>artículos 8 al 18</b> del Estatuto de la Iglesia Presbiteriana de Chile.
       Es la <b>Lección 2 de 5</b> de esta capacitación.
     </p>
-    <div class="tarjetas c3" style="margin-top:30px">
+    <div class="tarjetas c3" style="margin-top:26px">
       <div class="tarjeta"><div class="num">Lección 1</div><h4>Naturaleza de la membresía y el Rol Nacional</h4><p>Arts. 8 y 9 · Quiénes son miembros comulgantes y no comulgantes.</p></div>
       <div class="tarjeta" style="border-top-color:var(--oro);background:#fffdf7"><div class="num" style="color:var(--oro)">Lección 2 · hoy</div><h4>Vías de recepción e incorporación</h4><p>Arts. 10, 14 y 16 · Por qué puerta se entra a la iglesia.</p></div>
       <div class="tarjeta"><div class="num">Lección 3</div><h4>Derechos y privilegios de los comulgantes</h4><p>Art. 11 · Ser elegido, votar, participar.</p></div>
@@ -260,9 +306,9 @@ ol.li li b{color:#fff}
     <div class="kick">Fundamento del Libro Cuarto</div>
     <h2 class="tit chico" style="margin-bottom:0">El cuerpo y sus miembros</h2>
     <div class="regla"></div>
-    <div class="vers" style="margin-top:34px">«Ahora bien, ustedes son el cuerpo de Cristo, y cada uno individualmente un miembro de él.»</div>
+    <div class="vers" style="margin-top:29px">«Ahora bien, ustedes son el cuerpo de Cristo, y cada uno individualmente un miembro de él.»</div>
     <div class="ref">1 Corintios 12.27</div>
-    <p class="nota" style="margin-top:30px">
+    <p class="nota" style="margin-top:26px">
       La membresía no es un registro formal o burocrático, sino <b>la manifestación visible de ser partes
       vivas e interconectadas del Cuerpo de Cristo</b> en la iglesia local.
     </p>
@@ -274,15 +320,15 @@ ol.li li b{color:#fff}
     <div class="kick">Introducción</div>
     <h2 class="tit chico" style="margin-bottom:0">La iglesia debe cuidar sus puertas</h2>
     <div class="regla"></div>
-    <div class="vers" style="margin-top:40px;max-width:1080px">
+    <div class="vers" style="margin-top:34px;max-width:1080px">
       «Una puerta abierta sin criterio deja entrar lo que no debe; una puerta cerrada sin amor deja fuera
       a los que Cristo compró con su sangre.»
     </div>
-    <p class="nota" style="color:#b6c4d2;margin-top:38px;max-width:900px">
+    <p class="nota" style="color:#b6c4d2;margin-top:32px;max-width:900px">
       Hoy no hablamos solo de un trámite. Hablamos de <b style="color:#fff">cuidado pastoral</b>:
       qué hace la iglesia cuando alguien pide ser recibido en su comunión.
     </p>
-    <p class="nota" style="color:#b6c4d2;margin-top:20px;max-width:980px;font-size:18px"><b style="color:#fff">Nota.</b> «Puerta abierta» es una <b style="color:#fff">imagen</b>, no una puerta literal: es la manera de ilustrar cómo se entra a la membresía. El Estatuto no habla de puertas; enumera las cinco vías de recepción del Art. 10, que son taxativas.</p>
+    <p class="nota" style="color:#b6c4d2;margin-top:17px;max-width:980px;font-size:22px"><b style="color:#fff">Nota.</b> «Puerta abierta» es una <b style="color:#fff">imagen</b>, no una puerta literal: es la manera de ilustrar cómo se entra a la membresía. El Estatuto no habla de puertas; enumera las cinco vías de recepción del Art. 10, que son taxativas.</p>
     <div class="pie"><span>Lección 2 · Vías de recepción e incorporación</span><span>Lección 2</span></div>
   </section>
 
@@ -290,8 +336,8 @@ ol.li li b{color:#fff}
   <section class="slide azul" data-t="Art. 10 · Apertura">
     <div class="kick" style="color:#062033">Estatuto de la IPCh · Libro Cuarto</div>
     <h2 class="tit med" style="max-width:1060px">«Los miembros comulgantes serán recibidos mediante alguna de las siguientes formas…»</h2>
-    <div style="height:3px;width:110px;background:#062033;margin:30px 0"></div>
-    <p class="sub" style="color:#0b2740;font-size:23px;max-width:900px">
+    <div style="height:3px;width:110px;background:#062033;margin:26px 0"></div>
+    <p class="sub" style="color:#0b2740;font-size:28px;max-width:900px">
       <b style="color:#062033">Artículo 10.</b> Lo que sigue es una enumeración cerrada:
       <b style="color:#062033">cinco vías, y solo cinco.</b>
     </p>
@@ -303,14 +349,14 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 10 · Miembros comulgantes</div>
     <h2 class="tit chico" style="margin-bottom:0">Las cinco vías de recepción</h2>
     <div class="regla"></div>
-    <div class="tarjetas c5" style="margin-top:34px">
+    <div class="tarjetas c5" style="margin-top:29px">
       <div class="tarjeta"><div class="num">a</div><h4>Pública profesión de fe</h4></div>
       <div class="tarjeta"><div class="num">b</div><h4>Bautismo y pública profesión de fe</h4></div>
       <div class="tarjeta"><div class="num">c</div><h4>Carta de traslado</h4></div>
       <div class="tarjeta"><div class="num">d</div><h4>Restauración</h4></div>
       <div class="tarjeta" style="border-top-color:var(--oro)"><div class="num" style="color:var(--oro)">e</div><h4>Jurisdicción territorial</h4></div>
     </div>
-    <div class="aviso" style="font-size:22px">
+    <div class="aviso" style="font-size:27px">
       <b>La lista es taxativa.</b> Si alguien llega por una vía que no está aquí —por ejemplo, una
       traslación de confianza sin carta formal— <b>no hay un segundo marco estatutario</b> para incorporarlo.
     </div>
@@ -322,7 +368,7 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 10 · a y b</div>
     <h2 class="tit chico" style="margin-bottom:0">Las dos vías de primera recepción</h2>
     <div class="regla"></div>
-    <div class="tarjetas c2" style="margin-top:32px">
+    <div class="tarjetas c2" style="margin-top:27px">
       <div class="tarjeta">
         <div class="num">a · Sin bautismo previo</div>
         <h4>Pública profesión de fe</h4>
@@ -336,7 +382,7 @@ ol.li li b{color:#fff}
         es recibido como comulgante en plena comunión.</p>
       </div>
     </div>
-    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:30px">
+    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:26px">
       En ambos casos hay una <b>declaración pública</b>. La fe que se recibe en la iglesia es la que se
       <b>confiesa con la boca</b>, no la que se queda en privado.
     </div>
@@ -348,7 +394,7 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 10 · c</div>
     <h2 class="tit chico" style="margin-bottom:0">Carta de traslado</h2>
     <div class="regla"></div>
-    <div class="vers" style="font-size:29px;margin-top:34px">«…carta de traslado…»</div>
+    <div class="vers" style="font-size:35px;margin-top:29px">«…carta de traslado…»</div>
     <ul class="li chico">
       <li>Es la vía de quien <b>ya es miembro comulgante</b> de otra iglesia local y se traslada a la nuestra.</li>
       <li>La carta es el documento que <b>testimonia</b> la membresía anterior ante el Consitorio receptor.</li>
@@ -366,9 +412,9 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 10 · d</div>
     <h2 class="tit chico" style="margin-bottom:0">Restauración</h2>
     <div class="regla"></div>
-    <div class="vers" style="font-size:29px;margin-top:30px">«…si alguien es sorprendido en alguna falta, ustedes que son espirituales, restáurenlo…»</div>
+    <div class="vers" style="font-size:35px;margin-top:26px">«…si alguien es sorprendido en alguna falta, ustedes que son espirituales, restáurenlo…»</div>
     <div class="ref">Gálatas 6.1</div>
-    <ul class="li chico" style="margin-top:26px">
+    <ul class="li chico" style="margin-top:22px">
       <li>Es la vía de quien se apartó de la comunión y <b>regresa</b> a ella.</li>
       <li>El texto bíblico no dice <i>condenar</i>, sino <b>restaurar</b>: la comunidad es agente de reconciliación, no de repulsión.</li>
       <li>La restauración existe como vía <b>precisamente porque el Estatuto tiene una expectativa de permanencia</b>, no una regla de permanencia.</li>
@@ -380,13 +426,13 @@ ol.li li b{color:#fff}
   <section class="slide azul" data-t="Vía e · Jurisdicción territorial">
     <div class="kick" style="color:#062033">Art. 14 · La quinta vía, la más específica</div>
     <h2 class="tit chico" style="margin-bottom:0">Jurisdicción territorial</h2>
-    <div style="height:3px;width:110px;background:#062033;margin:22px 0 26px"></div>
-    <p class="sub" style="color:#0b2740;font-size:21px;max-width:1080px;margin-top:0">
+    <div style="height:3px;width:110px;background:#062033;margin:19px 0 26px"></div>
+    <p class="sub" style="color:#0b2740;font-size:26px;max-width:1080px;margin-top:0">
       «Para la incorporación de miembros podrá operar la jurisdicción territorial de una iglesia local
       respecto de miembros comulgantes que provengan de otra iglesia local… y que hayan participado
       activamente, a lo menos, durante un año.»
     </p>
-    <div class="tarjetas c2" style="margin-top:34px">
+    <div class="tarjetas c2" style="margin-top:29px">
       <div class="tarjeta" style="border-top-color:#062033">
         <div class="num" style="color:#062033">Condición 1 · Procedencia</div>
         <h4>Vienen de otra iglesia local</h4>
@@ -398,7 +444,7 @@ ol.li li b{color:#fff}
         <p>Verificable. Ese año es el tiempo en que la iglesia conoce a las personas y puede dar testimonio de su vida.</p>
       </div>
     </div>
-    <div class="aviso" style="margin-top:28px">
+    <div class="aviso" style="margin-top:24px">
       Las dos condiciones van juntas: <b>no hay atajo</b>. O se viene de otra iglesia
       local, o no se entra por esta vía.
     </div>
@@ -410,7 +456,7 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 14 · El sentido del año</div>
     <h2 class="tit chico" style="margin-bottom:0">No es un requisito técnico. Es tiempo de testimonio.</h2>
     <div class="regla"></div>
-    <ul class="li" style="margin-top:36px">
+    <ul class="li" style="margin-top:31px">
       <li>El Estatuto no pide <b>papeles</b>: pide <b>conocimiento mutuo</b>.</li>
       <li>Un año no se cuenta en meses de calendario, se cuenta en <b>presencia activa</b>: asistencia, servicio, trato.</li>
       <li>Al cumplirse el año, la iglesia puede <b>dar testimonio</b> de la vida de quien llega. Eso es lo que el Art. 14 supone.</li>
@@ -423,15 +469,15 @@ ol.li li b{color:#fff}
   </section>
 
   <!-- 13 · ART. 16, NO COMULGANTES -->
-  <section class="slide blanco" data-t="Art. 16 · No comulgantes">
+  <section class="slide blanco aprieta-2" data-t="Art. 16 · No comulgantes">
     <div class="kick">Art. 16 · Miembros no comulgantes</div>
     <h2 class="tit chico" style="margin-bottom:0">El menor no llega solo a la iglesia</h2>
     <div class="regla"></div>
-    <p class="sub" style="margin-top:22px;font-size:21px">
+    <p class="sub" style="margin-top:19px;font-size:26px">
       «Los miembros no comulgantes serán recibidos por: <b>a) Bautismo en la infancia.</b>
       <b>b) Traslado de los padres o adultos a los que les corresponda… su cuidado personal.</b>»
     </p>
-    <div class="tarjetas c2" style="margin-top:32px">
+    <div class="tarjetas c2" style="margin-top:27px">
       <div class="tarjeta">
         <div class="num">a · Por el bautismo</div>
         <h4>Bautismo en la infancia</h4>
@@ -445,7 +491,7 @@ ol.li li b{color:#fff}
         tuición, guarda o tutela.</p>
       </div>
     </div>
-    <div class="aviso" style="font-size:21px">
+    <div class="aviso" style="font-size:26px">
       Ambas vías parten de una misma realidad: <b>el menor no llega solo a la iglesia, llega con su familia.</b>
     </div>
     <div class="pie"><span>Art. 16</span><span>Lección 2</span></div>
@@ -456,12 +502,12 @@ ol.li li b{color:#fff}
     <div class="kick">El hilo que une los tres artículos</div>
     <h2 class="tit chico" style="margin-bottom:0">Ninguna entrada es automática ni irreversible</h2>
     <div class="regla"></div>
-    <div class="tarjetas c3" style="margin-top:38px">
+    <div class="tarjetas c3" style="margin-top:32px">
       <div class="tarjeta"><div class="num">Recepción</div><h4>Se entra</h4><p>Con declaración pública, bautismo, carta o restauración.</p></div>
       <div class="tarjeta"><div class="num">Jurisdicción</div><h4>Se conoce</h4><p>Un año de participación activa verificable.</p></div>
       <div class="tarjeta"><div class="num">Traslado</div><h4>Se viaja</h4><p>El menor llega con su familia y sus responsables.</p></div>
     </div>
-    <p class="nota" style="color:#c2cfdb;margin-top:36px;max-width:1020px;font-size:21px">
+    <p class="nota" style="color:#c2cfdb;margin-top:31px;max-width:1020px;font-size:26px">
       Cada vía deja al miembro en una <b style="color:#fff">relación que será cuidada</b> y que puede,
       si la vida lo requiere, <b style="color:#fff">transformarse</b>. El Estatuto no fija una regla de
       permanencia: ofrece un proceso.
@@ -474,7 +520,7 @@ ol.li li b{color:#fff}
     <div class="kick">Aplicación</div>
     <h2 class="tit chico" style="margin-bottom:0">Qué pedir el domingo</h2>
     <div class="regla"></div>
-    <ol class="li" style="margin-top:34px">
+    <ol class="li" style="margin-top:29px">
       <li><b>Si te transladaste de otra iglesia:</b> verifica que llevas la carta correspondiente.
       Sin ella, tu situación en el Rol puede quedar indeterminada hasta que el Art. 18 la resuelva.</li>
       <li><b>Como iglesia:</b> ejercita el discernimiento del Consitorio al admitir nuevos creyentes.
@@ -490,14 +536,14 @@ ol.li li b{color:#fff}
     <div class="kick">Cierre</div>
     <h2 class="tit chico" style="margin-bottom:0">El orden de recepción preserva la verdad</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:23px;max-width:1000px">
+    <p class="sub" style="font-size:28px;max-width:1000px">
       El orden de recepción preserva la verdad y la comunión fraternal. Se cierra orando por los nuevos
       miembros, para que <b style="color:#fff">el fundamento sea Cristo y no la costumbre</b>.
     </p>
-    <div class="vers" style="font-size:24px;margin-top:34px;max-width:980px;color:#c9d6e3">
+    <div class="vers" style="font-size:29px;margin-top:29px;max-width:980px;color:#c9d6e3">
       «Pero tú, sé sobrio en todas las cosas, sufre penalidades, haz el trabajo de un evangelista, cumple tu ministerio.»
     </div>
-    <div class="ref" style="margin-top:20px">2 Timoteo 4.5</div>
+    <div class="ref" style="margin-top:17px">2 Timoteo 4.5</div>
 
     
     <div class="pie"><span>Iglesia Presbiteriana Divino Salvador</span><span>Lección 2 · 2 Ti 4.5</span></div>
@@ -507,11 +553,11 @@ ol.li li b{color:#fff}
     <div class="kick">Terminó la exposición</div>
     <h2 class="tit med" style="max-width:900px">Ahora les toca a ustedes</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:22px;max-width:900px">
+    <p class="sub" style="font-size:27px;max-width:900px">
       Todo lo que vimos fue exposición. Esto es trabajo. Se hace en grupos, en la
       clase, con lo que cada uno sabe de su propia iglesia.
     </p>
-    <div class="tarjetas c3" style="margin-top:34px">
+    <div class="tarjetas c3" style="margin-top:29px">
       <div class="tarjeta"><div class="num">1 · Los grupos</div><h4>Tercenas</h4><p>No más de cuatro personas. Uno se encarga de escribir.</p></div>
       <div class="tarjeta"><div class="num">2 · El tiempo</div><h4>15 minutos</h4><p>Cinco para pensar, diez para ponerse de acuerdo.</p></div>
       <div class="tarjeta"><div class="num">3 · La entrega</div><h4>Una frase</h4><p>Cada grupo dice una sola respuesta, en voz alta.</p></div>
@@ -524,8 +570,8 @@ ol.li li b{color:#fff}
     <div class="kick">Taller práctico</div>
     <h2 class="tit chico" style="margin-bottom:0">Las tres tareas</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:20px;margin-top:18px">Cada grupo toma <b>una</b>. No hay que hacer las tres.</p>
-    <div class="tarjetas c3" style="margin-top:26px">
+    <p class="sub" style="font-size:24px;margin-top:15px">Cada grupo toma <b>una</b>. No hay que hacer las tres.</p>
+    <div class="tarjetas c3" style="margin-top:22px">
       <div class="tarjeta" style="border-top-color:var(--oro)">
         <div class="num" style="color:var(--oro)">Tarea 1</div>
         <h4>Por dónde entré</h4>
@@ -556,7 +602,7 @@ ol.li li b{color:#fff}
     <div class="kick">Taller práctico · para los que se atoran</div>
     <h2 class="tit chico" style="margin-bottom:0">Preguntas guía</h2>
     <div class="regla"></div>
-    <ul class="li" style="margin-top:14px">
+    <ul class="li" style="margin-top:12px">
       <li style="margin-bottom:8px">¿Cuál de las cinco vías se usó <b>más</b> en esta iglesia? ¿Y cuál menos?</li>
       <li style="margin-bottom:8px">Cuando el Art. 10 dice que la lista es <b>taxativa</b>, ¿qué se hace el domingo
       con el que llega "de confianza"?</li>
@@ -565,7 +611,7 @@ ol.li li b{color:#fff}
       <li style="margin-bottom:8px">Si un menor se bautiza y sus padres se cambian de ciudad, ¿qué pasa con su
       membresía según el Art. 16?</li>
     </ul>
-    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:18px">
+    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:15px">
       <b>Regla del taller:</b> se puede discrepar del Artículo 10, pero hay que discrepar
       <b>por escrito</b>. Lo que no vale es inventar una sexta vía en la sala.
     </div>
@@ -577,17 +623,17 @@ ol.li li b{color:#fff}
     <div class="kick">Taller práctico · cierre</div>
     <h2 class="tit chico" style="margin-bottom:0">Cada grupo, una frase</h2>
     <div class="regla"></div>
-    <ol class="li" style="margin-top:32px">
+    <ol class="li" style="margin-top:27px">
       <li>El grupo habla. <b>Un minuto</b>, no más.</li>
       <li>Alguien de la congregación repite la respuesta en voz alta, para que quede escrito
       en el acta.</li>
       <li>Lo que salga de aquí <b>se lleva al Consitorio</b>. No es un ejercicio de clase:
       es una lista de cosas por hacer.</li>
     </ol>
-    <div class="vers" style="font-size:23px;margin-top:34px;max-width:940px;color:#c9d6e3">
+    <div class="vers" style="font-size:28px;margin-top:29px;max-width:940px;color:#c9d6e3">
       «Pero tú, sé sobrio en todas las cosas, sufre penalidades, haz el trabajo de un evangelista, cumple tu ministerio.»
     </div>
-    <div class="ref" style="margin-top:18px">2 Timoteo 4.5</div>
+    <div class="ref" style="margin-top:15px">2 Timoteo 4.5</div>
     <div class="credito">Textos bíblicos: Nueva Biblia de las Américas © Sociedades Bíblicas Unidas</div>
     <div class="pie"><span>Iglesia Presbiteriana Divino Salvador</span><span>Lección 2 · Taller</span></div>
   </section>

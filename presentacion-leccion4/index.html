@@ -36,7 +36,7 @@ body{
 /* ---------- diapositiva ---------- */
 .slide{
   position:absolute;inset:0;display:none;overflow:hidden;
-  padding:56px 78px;flex-direction:column;
+  padding:44px 70px;flex-direction:column;
 }
 .slide.on{display:flex;animation:entra .32s ease both}
 @keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -52,25 +52,25 @@ body{
 
 /* ---------- elementos tipográficos ---------- */
 .kick{
-  font-size:15px;letter-spacing:.26em;text-transform:uppercase;
+  font-size:17px;letter-spacing:.26em;text-transform:uppercase;
   color:var(--azul);font-weight:700;
 }
 .claro .kick,.oscuro .kick{color:var(--azul)}
 .blanco .kick{color:#0e7fb8}
-.tit{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#fff;line-height:1.14;margin-top:14px}
+.tit{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#fff;line-height:1.14;margin-top:10px}
 .claro .tit,.blanco .tit{color:var(--navy)}
-.tit.big{font-size:60px}
-.tit.med{font-size:46px}
-.tit.chico{font-size:36px}
-.sub{font-size:20px;line-height:1.62;color:#c2cfdb;margin-top:20px;max-width:940px}
+.tit.big{font-size:64px}
+.tit.med{font-size:50px}
+.tit.chico{font-size:40px}
+.sub{font-size:23px;line-height:1.62;color:#c2cfdb;margin-top:16px;max-width:940px}
 .claro .sub{color:var(--gris)}
 .blanco .sub{color:var(--gris)}
-.regla{height:3px;width:96px;background:var(--oro);margin:26px 0}
+.regla{height:3px;width:96px;background:var(--oro);margin:20px 0}
 
-ul.li{list-style:none;margin-top:26px}
+ul.li{list-style:none;margin-top:20px}
 ul.li li{
-  font-size:25px;line-height:1.46;color:#e6edf4;padding-left:38px;
-  position:relative;margin-bottom:20px;
+  font-size:29px;line-height:1.46;color:#e6edf4;padding-left:38px;
+  position:relative;margin-bottom:14px;
 }
 .claro ul.li li,.blanco ul.li li{color:#2c3947}
 ul.li li::before{
@@ -78,18 +78,18 @@ ul.li li::before{
   background:var(--azul);transform:rotate(45deg);
 }
 .claro ul.li li::before,.blanco ul.li li::before{background:var(--azul)}
-ul.li.chico li{font-size:21px;margin-bottom:14px}
+ul.li.chico li{font-size:24px;margin-bottom:10px}
 ul.li.chico li::before{top:10px;width:9px;height:9px}
 
-ol.li{list-style:none;counter-reset:n;margin-top:26px}
+ol.li{list-style:none;counter-reset:n;margin-top:20px}
 ol.li li{
-  counter-increment:n;font-size:25px;line-height:1.46;color:#e6edf4;
-  padding-left:56px;position:relative;margin-bottom:22px;
+  counter-increment:n;font-size:29px;line-height:1.46;color:#e6edf4;
+  padding-left:56px;position:relative;margin-bottom:16px;
 }
 ol.li li::before{
   content:counter(n);position:absolute;left:0;top:-2px;
   width:38px;height:38px;border-radius:50%;background:var(--azul);
-  color:#062033;font-weight:700;font-size:19px;
+  color:#062033;font-weight:700;font-size:21px;
   display:flex;align-items:center;justify-content:center;
 }
 ol.li li b{color:#fff}
@@ -97,36 +97,36 @@ ol.li li b{color:#fff}
 .claro ol.li li b,.blanco ol.li li b{color:var(--navy)}
 
 .vers{
-  font-family:Georgia,serif;font-size:34px;line-height:1.5;font-style:italic;
+  font-family:Georgia,serif;font-size:38px;line-height:1.5;font-style:italic;
   color:var(--navy);max-width:1020px;
 }
 .oscuro .vers{color:#fff}
-.ref{font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul);font-weight:700;margin-top:26px}
-.nota{font-size:19px;line-height:1.66;color:var(--gris);margin-top:20px;max-width:900px}
+.ref{font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul);font-weight:700;margin-top:20px}
+.nota{font-size:22px;line-height:1.66;color:var(--gris);margin-top:16px;max-width:900px}
 .nota b{color:#0e5a8a}
 
 /* ---------- tablas / tarjetas ---------- */
-.tarjetas{display:grid;gap:20px;margin-top:28px}
+.tarjetas{display:grid;gap:20px;margin-top:22px}
 .tarjetas.c2{grid-template-columns:1fr 1fr}
 .tarjetas.c3{grid-template-columns:repeat(3,1fr)}
 .tarjetas.c5{grid-template-columns:repeat(5,1fr)}
 .tarjeta{
   background:#fff;border:1px solid var(--line);border-top:4px solid var(--azul);
-  border-radius:9px;padding:22px 22px 24px;box-shadow:0 1px 3px rgba(16,32,52,.06);
+  border-radius:9px;padding:18px 20px 20px;box-shadow:0 1px 3px rgba(16,32,52,.06);
 }
 .oscuro .tarjeta{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);border-top-color:var(--oro)}
 .tarjeta .num{
-  font-size:13px;letter-spacing:.16em;font-weight:700;color:var(--azul);
+  font-size:15px;letter-spacing:.16em;font-weight:700;color:var(--azul);
   text-transform:uppercase;margin-bottom:10px;
 }
-.tarjeta h4{font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:9px}
+.tarjeta h4{font-family:Georgia,serif;font-size:26px;font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:7px}
 .oscuro .tarjeta h4{color:#fff}
-.tarjeta p{font-size:17px;line-height:1.6;color:var(--gris)}
+.tarjeta p{font-size:20px;line-height:1.6;color:var(--gris)}
 .oscuro .tarjeta p{color:#c2cfdb}
 
 .aviso{
   background:#fff8e8;border-left:5px solid var(--oro);border-radius:0 10px 10px 0;
-  padding:22px 26px;margin-top:26px;color:#5c4a14;font-size:21px;line-height:1.6;
+  padding:18px 22px;margin-top:20px;color:#5c4a14;font-size:24px;line-height:1.6;
 }
 .aviso b{color:#3d3009}
 
@@ -181,7 +181,7 @@ ol.li li b{color:#fff}
 
 /* ---------- bloque de oracion ---------- */
 .orar{
-  margin-top:30px;padding:22px 28px;border-radius:10px;
+  margin-top:24px;padding:18px 24px;border-radius:10px;
   background:rgba(41,171,226,.10);border-left:4px solid var(--oro);
   font-family:Georgia,serif;font-style:italic;font-size:19px;line-height:1.62;color:#dfe8f0;
   max-width:1010px;
@@ -203,6 +203,52 @@ ol.li li b{color:#fff}
   .slide:last-child{page-break-after:auto}
   #prog,#cont,#ayuda,#gral{display:none!important}
 }
+
+/* ---------- laminas cargadas ----------
+   Con la letra grande, algunas laminas se pasan de los 720 px. Estas cuatro
+   clases aprietan el interlineado, los huecos y el margen interior por peldanos,
+   de menos a mas. El ajuste automatico le pone a cada lamina el peldano mas
+   flojo que le sirve, y no vuelve nunca a uno que ya se sabe que no cabe.
+   El !important hace falta porque el aire va puesto en linea en el marcado,
+   y lo puesto en linea gana. */
+.aprieta-1 ul.li li, .aprieta-1 ol.li li { line-height:1.43 !important; margin-bottom:13px !important; }
+.aprieta-1 ul.li, .aprieta-1 ol.li { margin-top:18px !important; }
+.aprieta-1 .tarjetas, .aprieta-1 .aviso, .aprieta-1 .orar { margin-top:21px !important; }
+.aprieta-1 .sub { margin-top:15px !important; }
+.aprieta-1 .tit { margin-top:10px !important; }
+.aprieta-1 .regla { margin:22px 0 !important; }
+
+.aprieta-2 ul.li li, .aprieta-2 ol.li li { line-height:1.37 !important; margin-bottom:11px !important; }
+.aprieta-2 ul.li, .aprieta-2 ol.li { margin-top:17px !important; }
+.aprieta-2 .tarjetas, .aprieta-2 .aviso, .aprieta-2 .orar { margin-top:20px !important; }
+.aprieta-2 .tarjeta { padding:18px 21px 20px !important; }
+.aprieta-2 .sub { margin-top:14px !important; }
+.aprieta-2 .tit { margin-top:9px !important; }
+.aprieta-2 .regla { margin:20px 0 !important; }
+
+.aprieta-3 ul.li li, .aprieta-3 ol.li li { font-size:28px !important; line-height:1.34 !important; margin-bottom:9px !important; }
+.aprieta-3 ul.li.chico li { line-height:1.32 !important; margin-bottom:8px !important; }
+.aprieta-3 ul.li, .aprieta-3 ol.li { margin-top:15px !important; }
+.aprieta-3 .tarjetas, .aprieta-3 .aviso, .aprieta-3 .orar { margin-top:18px !important; }
+.aprieta-3 .tarjeta { padding:16px 20px 18px !important; }
+.aprieta-3 .tarjeta h4 { font-size:25px !important; margin-bottom:7px !important; }
+.aprieta-3 .sub { margin-top:14px !important; }
+.aprieta-3 .tit { margin-top:9px !important; }
+.aprieta-3 .regla { margin:17px 0 !important; }
+
+.aprieta-4 { padding:30px 48px !important; }
+.aprieta-4 ul.li li, .aprieta-4 ol.li li { font-size:27px !important; line-height:1.29 !important; margin-bottom:8px !important; }
+.aprieta-4 ul.li.chico li { font-size:25px !important; line-height:1.29 !important; margin-bottom:7px !important; }
+.aprieta-4 ul.li, .aprieta-4 ol.li { margin-top:13px !important; }
+.aprieta-4 .tarjetas, .aprieta-4 .aviso, .aprieta-4 .orar { margin-top:15px !important; }
+.aprieta-4 .tarjeta { padding:14px 18px 16px !important; }
+.aprieta-4 .tarjeta p { font-size:19px !important; }
+.aprieta-4 .tarjeta h4 { font-size:24px !important; margin-bottom:6px !important; }
+.aprieta-4 .sub { font-size:22px !important; margin-top:13px !important; }
+.aprieta-4 .vers { margin-top:14px !important; }
+.aprieta-4 .nota { margin-top:13px !important; }
+.aprieta-4 .tit { margin-top:8px !important; }
+.aprieta-4 .regla { margin:14px 0 !important; }
 </style>
 </head>
 <body>
@@ -211,11 +257,11 @@ ol.li li b{color:#fff}
 <!-- 1 · PORTADA -->
   <section class="slide oscuro" data-t="Portada">
     <div class="marca marca-b" style="left:50%;right:auto;top:48px;transform:translateX(-50%);width:112px;height:112px"></div>
-    <div style="text-align:center;margin-top:112px">
+    <div style="text-align:center;margin-top:95px">
       <div class="kick">Escuela Bíblica Dominical · Clase de Adultos · 2026</div>
-      <h1 class="tit chico" style="max-width:1000px;margin:14px auto 0;font-size:38px">Deberes, fidelidad y mayordomía</h1>
-      <div style="height:3px;width:110px;background:var(--oro);margin:24px auto"></div>
-      <div class="sub" style="margin:0 auto;text-align:center;max-width:900px;font-size:19px">
+      <h1 class="tit chico" style="max-width:1000px;margin:12px auto 0;font-size:46px">Deberes, fidelidad y mayordomía</h1>
+      <div style="height:3px;width:110px;background:var(--oro);margin:20px auto"></div>
+      <div class="sub" style="margin:0 auto;text-align:center;max-width:900px;font-size:23px">
         Capacitación Eclesiástica y Gobierno Presbiteriano<br>
         <b style="color:#fff">Libro Cuarto · De los Miembros · Art. 12</b>
       </div>
@@ -228,12 +274,12 @@ ol.li li b{color:#fff}
     <div class="kick">Punto de partida</div>
     <h2 class="tit chico" style="margin-bottom:0">El reverso exacto del Art. 11</h2>
     <div class="regla"></div>
-    <p class="nota" style="margin-top:0;font-size:21px">
+    <p class="nota" style="margin-top:0;font-size:26px">
       La semana pasada vimos los <b>derechos</b> del miembro comulgante: ser elegido, votar,
       participar de la Cena, presentar a los hijos. Hoy vemos los <b>deberes</b>. No son un
       capítulo aparte: son la otra cara de la misma moneda.
     </p>
-    <div class="tarjetas c3" style="margin-top:30px">
+    <div class="tarjetas c3" style="margin-top:26px">
       <div class="tarjeta"><div class="num">Lección 3</div><h4>Derechos y privilegios</h4><p>Art. 11 · Cuatro capacidades que se reciben.</p></div>
       <div class="tarjeta" style="border-top-color:var(--oro);background:#fffdf7"><div class="num" style="color:var(--oro)">Lección 4 · hoy</div><h4>Deberes y fidelidad</h4><p>Art. 12 · Nueve compromisos que se asumen.</p></div>
       <div class="tarjeta"><div class="num">Lección 5</div><h4>Traslados y pérdida de membresía</h4><p>Arts. 13, 15, 17 y 18 · Lo que pasa cuando alguien se va.</p></div>
@@ -260,11 +306,11 @@ ol.li li b{color:#fff}
     <div class="kick">Introducción</div>
     <h2 class="tit chico" style="margin-bottom:0">No es un reproche</h2>
     <div class="regla"></div>
-    <div class="vers" style="margin-top:36px;max-width:1000px">
+    <div class="vers" style="margin-top:31px;max-width:1000px">
       «A los privilegios en la iglesia les corresponden deberes sagrados, asumidos en el pacto.
       El Artículo 12 no es un reproche: es el reverso exacto del Artículo 11.»
     </div>
-    <p class="nota" style="color:#b6c4d2;margin-top:34px;max-width:960px;font-size:21px">
+    <p class="nota" style="color:#b6c4d2;margin-top:29px;max-width:960px;font-size:26px">
       La palabra clave es <b style="color:#fff">asumidos</b>. Nadie recibe un derecho sin
       firmar algo. Y lo que se firma aquí es el pacto: la misma vida que da derecho a votar es
       la que obliga a cuidar esa comunidad.
@@ -275,9 +321,9 @@ ol.li li b{color:#fff}
   <!-- 5 · ART. 12 APERTURA -->
   <section class="slide azul" data-t="Art. 12 · Apertura">
     <div class="kick" style="color:#062033">Artículo 12 · Libro Cuarto</div>
-    <h2 class="tit med" style="max-width:1060px;font-size:34px">«Son deberes de los miembros comulgantes…»</h2>
-    <div style="height:3px;width:110px;background:#062033;margin:26px 0"></div>
-    <p class="sub" style="color:#0b2740;font-size:23px;max-width:960px">
+    <h2 class="tit med" style="max-width:1060px;font-size:41px">«Son deberes de los miembros comulgantes…»</h2>
+    <div style="height:3px;width:110px;background:#062033;margin:22px 0"></div>
+    <p class="sub" style="color:#0b2740;font-size:28px;max-width:960px">
       Nueve, uno por uno:
       <b style="color:#062033">a</b> las Escrituras · <b style="color:#062033">b</b> el evangelio · <b style="color:#062033">c</b> el testimonio · <b style="color:#062033">d</b> los diezmos ·
       <b style="color:#062033">e</b> la obediencia · <b style="color:#062033">f</b> la participación · <b style="color:#062033">g</b> los cultos · <b style="color:#062033">h</b> la paz · <b style="color:#062033">i</b> la disciplina.
@@ -290,7 +336,7 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 12 · el mapa</div>
     <h2 class="tit chico" style="margin-bottom:0">Nueve deberes, tres bloques</h2>
     <div class="regla"></div>
-    <div class="tarjetas c3" style="margin-top:28px">
+    <div class="tarjetas c3" style="margin-top:24px">
       <div class="tarjeta">
         <div class="num">a · b · c</div>
         <h4>Doctrinal y vital</h4>
@@ -315,9 +361,9 @@ ol.li li b{color:#fff}
     <div class="kick">Bloque doctrinal y vital</div>
     <h2 class="tit chico" style="margin-bottom:0">Con quién andas, qué dices, cómo te ven</h2>
     <div class="regla"></div>
-    <div class="vers" style="font-size:25px;margin-top:28px">«No permitas que nadie menosprecie tu juventud, sino sé ejemplo de los creyentes en palabra, conducta, amor, fe y pureza.»</div>
+    <div class="vers" style="font-size:30px;margin-top:24px">«No permitas que nadie menosprecie tu juventud, sino sé ejemplo de los creyentes en palabra, conducta, amor, fe y pureza.»</div>
     <div class="ref">1 Timoteo 4.12</div>
-    <ul class="li" style="margin-top:26px">
+    <ul class="li" style="margin-top:22px">
       <li><b>a)</b> vivir de acuerdo con las enseñanzas de las Sagradas Escrituras.</li>
       <li><b>b)</b> honrar y propagar el evangelio, sin vergüenza y necesidad de pedir permiso para hablar de él.</li>
       <li><b>c)</b> guardar buen testimonio de vida. El inciso dice <b>de vida</b>, no de teología. Se nota en la calle.</li>
@@ -330,11 +376,11 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 12 c · la parte difícil</div>
     <h2 class="tit chico" style="margin-bottom:0">«Testimonio de vida» no es teoría</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:23px;max-width:1000px;margin-top:22px">
+    <p class="sub" style="font-size:28px;max-width:1000px;margin-top:19px">
       El inciso c no dice «buena reputación doctrinal». Dice <b style="color:#fff">buen testimonio de vida</b>.
       Y vida es lo que la gente ve cuando no estás en el templo.
     </p>
-    <div class="tarjetas c3" style="margin-top:34px">
+    <div class="tarjetas c3" style="margin-top:29px">
       <div class="tarjeta">
         <div class="num">En el trabajo</div>
         <h4>¿Tu vida en el trabajo delata lo mismo?</h4>
@@ -360,10 +406,10 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 12 d · bloque financiero</div>
     <h2 class="tit chico" style="margin-bottom:0">«Continua, efectiva y sistemática»</h2>
     <div class="regla"></div>
-    <p class="sub" style="margin-top:16px;font-size:20px">Contribuir a la iglesia con sus diezmos y ofrendas…</p>
-    <div class="vers" style="font-size:26px;margin-top:26px">«Traigan todo el diezmo al alfolí… y Dios ama al que da con alegría.»</div>
+    <p class="sub" style="margin-top:14px;font-size:24px">Contribuir a la iglesia con sus diezmos y ofrendas…</p>
+    <div class="vers" style="font-size:32px;margin-top:22px">«Traigan todo el diezmo al alfolí… y Dios ama al que da con alegría.»</div>
     <div class="ref">Malaquías 3.10 · 2 Corintios 9.7</div>
-    <div class="tarjetas c3" style="margin-top:24px">
+    <div class="tarjetas c3" style="margin-top:20px">
       <div class="tarjeta"><div class="num">Continua</div><h4>No solo este mes</h4><p>Nunca «este mes no me es posible». Es un orden, no una reacción.</p></div>
       <div class="tarjeta" style="border-top-color:var(--oro)"><div class="num" style="color:var(--oro)">Efectiva</div><h4>No solo lo que sobra</h4><p>Lo que efectivamente se puede. La objeción de que «es que no me alcanza» no es teología.</p></div>
       <div class="tarjeta"><div class="num">Sistemática</div><h4>Con un método</h4><p>Una fecha, un monto, una decisión tomada antes y no durante.</p></div>
@@ -376,12 +422,12 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 11 d + Art. 12 · la costura</div>
     <h2 class="tit chico" style="margin-bottom:0">El diezmo no es una opción generosa</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:23px;max-width:1000px;margin-top:22px">
+    <p class="sub" style="font-size:28px;max-width:1000px;margin-top:19px">
       La misma frase aparece dos veces en el mismo artículo. En el <b style="color:#fff">Art. 11 a</b> es
       condición para <b style="color:#fff">ser candidato a un cargo</b>. En el <b style="color:#fff">Art. 12 d</b> es
       deber del <b style="color:#fff">comulgante</b>.
     </p>
-    <div class="aviso" style="background:#0f2947;border-left-color:var(--oro);color:#dbe6f0;margin-top:32px;font-size:22px">
+    <div class="aviso" style="background:#0f2947;border-left-color:var(--oro);color:#dbe6f0;margin-top:27px;font-size:27px">
       No son dos cosas parecidas. Es la <b style="color:#fff">misma cosa dicha desde los dos lados</b>.
       El diezmo no compra el derecho a gobernar: <b style="color:#fff">da cuenta de una vida ordenada</b>,
       que es lo que el Art. 11 estaba pidiendo cuando decía «diezmo efectivo y sistemático».
@@ -394,14 +440,14 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 12 d · el criterio</div>
     <h2 class="tit chico" style="margin-bottom:0">«Al dador alegre, no al dador exacto»</h2>
     <div class="regla"></div>
-    <div class="vers" style="font-size:27px;margin-top:28px">«Que cada uno dé como propuso en su corazón, no de mala gana ni por obligación, porque Dios ama al que da con alegría.»</div>
-    <div class="ref" style="margin-top:12px">2 Corintios 9.7</div>
-    <p class="nota" style="margin-top:18px;font-size:21px">
+    <div class="vers" style="font-size:33px;margin-top:24px">«Que cada uno dé como propuso en su corazón, no de mala gana ni por obligación, porque Dios ama al que da con alegría.»</div>
+    <div class="ref" style="margin-top:10px">2 Corintios 9.7</div>
+    <p class="nota" style="margin-top:15px;font-size:26px">
       Hay dos errores en esta frase que se repiten en las iglesias. La primera es creer que
       «exacto» es el criterio de Dios. No lo es. La segunda es creer que «alegre» significa
       alegría de pantalla. No significa eso.
     </p>
-    <div class="tarjetas c2" style="margin-top:14px">
+    <div class="tarjetas c2" style="margin-top:12px">
       <div class="tarjeta">
         <div class="num">Lo que NO pide</div>
         <h4>Ni el número exacto ni la alegría de pantalla</h4>
@@ -421,13 +467,13 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 12 e · el más difícil</div>
     <h2 class="tit chico" style="margin-bottom:0">Obedecer a las autoridades de la iglesia</h2>
     <div class="regla"></div>
-    <div class="vers" style="font-size:26px;margin-top:28px">«Obedezcan a sus pastores y sujétense a ellos, porque ellos velan por sus almas…»</div>
+    <div class="vers" style="font-size:32px;margin-top:24px">«Obedezcan a sus pastores y sujétense a ellos, porque ellos velan por sus almas…»</div>
     <div class="ref">Hebreos 13.17</div>
-    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:26px">
+    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:22px">
       Fíjense en la razón que da el texto: <b>no porque son jefes</b>, sino porque
       <b>velan por las almas</b>. El fundamento de la obediencia es el cuidado, no el cargo.
     </div>
-    <p class="nota" style="margin-top:22px;font-size:21px">
+    <p class="nota" style="margin-top:19px;font-size:26px">
       Es el inciso más difícil de vivir de los nueve, y el más importante. Cuando en una iglesia
       se empieza a desobedecer, no es por desacuerdo con un punto: es porque hace tiempo que
       nadie ve que nadie está velando por nadie.
@@ -440,11 +486,11 @@ ol.li li b{color:#fff}
     <div class="kick">Art. 12 e · el malentendido</div>
     <h2 class="tit chico" style="margin-bottom:0">Obedecer no es sumisión ciega</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:23px;max-width:1000px;margin-top:22px">
+    <p class="sub" style="font-size:28px;max-width:1000px;margin-top:19px">
       El inciso e pide reconocer el orden que Dios estableció para su rebaño. No pide que uno se
       calle cuando el orden se convierte en abuso.
     </p>
-    <div class="tarjetas c2" style="margin-top:34px">
+    <div class="tarjetas c2" style="margin-top:29px">
       <div class="tarjeta">
         <div class="num">Lo que sí es</div>
         <h4>Confianza</h4>
@@ -458,7 +504,7 @@ ol.li li b{color:#fff}
         autoridad: está siendo obedecido.</p>
       </div>
     </div>
-    <div class="aviso" style="background:#0f2947;border-left-color:var(--oro);color:#dbe6f0;margin-top:30px;font-size:21px">
+    <div class="aviso" style="background:#0f2947;border-left-color:var(--oro);color:#dbe6f0;margin-top:26px;font-size:26px">
       El camino que el Estatuto ofrece para el abuso no es la salida: es el <b style="color:#fff">Libro Sexto</b>,
       que es la Lección 11. La iglesia se protege con reglas, no con desacuerdos.
     </div>
@@ -466,17 +512,17 @@ ol.li li b{color:#fff}
   </section>
 
   <!-- 14 · INCISO I -->
-  <section class="slide claro" data-t="Inciso i · la disciplina">
+  <section class="slide claro aprieta-4" data-t="Inciso i · la disciplina">
     <div class="kick">Art. 12 i · el puente al Libro Sexto</div>
     <h2 class="tit chico" style="margin-bottom:0">Someterse a la disciplina eclesiástica</h2>
     <div class="regla"></div>
-    <div class="vers" style="font-size:27px;margin-top:28px">«Porque el Señor al que ama, disciplina, y azota a todo el que recibe por hijo. Dios los trata como a hijos; porque ¿qué hijo hay a quien su padre no discipline?»</div>
+    <div class="vers" style="font-size:33px;margin-top:24px">«Porque el Señor al que ama, disciplina, y azota a todo el que recibe por hijo. Dios los trata como a hijos; porque ¿qué hijo hay a quien su padre no discipline?»</div>
     <div class="ref">Hebreos 12.6-7</div>
-    <p class="nota" style="margin-top:26px;font-size:21px">
+    <p class="nota" style="margin-top:22px;font-size:26px">
       El inciso i cierra el círculo con el Libro Sexto, que empieza en la Lección 11. Quien
       goza de los derechos del Art. 11 acepta también el procedimiento del Libro VI.
     </p>
-    <div class="aviso" style="font-size:21px">
+    <div class="aviso" style="font-size:26px">
       <b>No es una amenaza.</b> Es la misma disciplina de amor que el texto de Hebreos describe:
       la del Padre que corrige a sus hijos porque los ama. La iglesia no se protege castigando;
       se protege <b>buscando, corrigiendo y restaurando</b>.
@@ -489,16 +535,16 @@ ol.li li b{color:#fff}
     <div class="kick">Recapitulación</div>
     <h2 class="tit chico" style="margin-bottom:0">Los nueve, en una línea cada uno</h2>
     <div class="regla"></div>
-    <ol class="li" style="margin-top:12px;font-size:19px">
-      <li style="margin-bottom:12px"><b>a)</b> vivir conforme a las Escrituras —<b>mi verdad</b> está en la Biblia.</li>
-      <li style="margin-bottom:12px"><b>b)</b> honrar y propagar el evangelio — <b>no me da vergüenza</b> de mi fe.</li>
-      <li style="margin-bottom:12px"><b>c)</b> guardar buen testimonio — <b>mi vida</b> lo confirma o lo desmiente.</li>
-      <li style="margin-bottom:12px"><b>d)</b> diezmo continuo, efectivo y sistemático — <b>hay orden</b> en mi economía.</li>
-      <li style="margin-bottom:12px"><b>e)</b> obedecer a las autoridades — <b>confío</b> en el grupo.</li>
-      <li style="margin-bottom:12px"><b>f)</b> participar activamente — <b>no estoy</b> de brazos cruzados.</li>
-      <li style="margin-bottom:12px"><b>g)</b> asistir regularmente a los cultos — <b>no improviso</b> mi fe.</li>
-      <li style="margin-bottom:12px"><b>h)</b> mantener la paz y la unidad — <b>no vivo</b> de chismorreos.</li>
-      <li style="margin-bottom:12px"><b>i)</b> someterme a la disciplina — <b>acepto</b> que me corrijan.</li>
+    <ol class="li" style="margin-top:10px;font-size:23px">
+      <li style="margin-bottom:10px"><b>a)</b> vivir conforme a las Escrituras —<b>mi verdad</b> está en la Biblia.</li>
+      <li style="margin-bottom:10px"><b>b)</b> honrar y propagar el evangelio — <b>no me da vergüenza</b> de mi fe.</li>
+      <li style="margin-bottom:10px"><b>c)</b> guardar buen testimonio — <b>mi vida</b> lo confirma o lo desmiente.</li>
+      <li style="margin-bottom:10px"><b>d)</b> diezmo continuo, efectivo y sistemático — <b>hay orden</b> en mi economía.</li>
+      <li style="margin-bottom:10px"><b>e)</b> obedecer a las autoridades — <b>confío</b> en el grupo.</li>
+      <li style="margin-bottom:10px"><b>f)</b> participar activamente — <b>no estoy</b> de brazos cruzados.</li>
+      <li style="margin-bottom:10px"><b>g)</b> asistir regularmente a los cultos — <b>no improviso</b> mi fe.</li>
+      <li style="margin-bottom:10px"><b>h)</b> mantener la paz y la unidad — <b>no vivo</b> de chismorreos.</li>
+      <li style="margin-bottom:10px"><b>i)</b> someterme a la disciplina — <b>acepto</b> que me corrijan.</li>
     </ol>
     <div class="pie"><span>Art. 12</span><span>Lección 4</span></div>
   </section>
@@ -508,7 +554,7 @@ ol.li li b{color:#fff}
     <div class="kick">Aplicación</div>
     <h2 class="tit chico" style="margin-bottom:0">Tres cosas para el domingo</h2>
     <div class="regla"></div>
-    <ol class="li" style="margin-top:30px">
+    <ol class="li" style="margin-top:26px">
       <li><b>Evalúa tu aporte financiero con honestidad.</b> El test no es cuánto das: es si
       tus finanzas reflejan un <b>orden</b> o una <b>reacción</b> a las necesidades del mes.</li>
       <li><b>Examina tu testimonio público.</b> El inciso c habla de vida visible: en el trabajo,
@@ -525,11 +571,11 @@ ol.li li b{color:#fff}
     <div class="kick">Terminó la exposición</div>
     <h2 class="tit med" style="max-width:900px">Ahora les toca a ustedes</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:22px;max-width:900px">
+    <p class="sub" style="font-size:27px;max-width:900px">
       Todo lo que vimos fue exposición. Esto es trabajo. Se hace en grupos, en la clase, con lo que
       cada uno sabe de su propia iglesia.
     </p>
-    <div class="tarjetas c3" style="margin-top:34px">
+    <div class="tarjetas c3" style="margin-top:29px">
       <div class="tarjeta"><div class="num">1 · Los grupos</div><h4>Tercenas</h4><p>No más de cuatro personas. Uno se encarga de escribir.</p></div>
       <div class="tarjeta"><div class="num">2 · El tiempo</div><h4>15 minutos</h4><p>Cinco para pensar, diez para ponerse de acuerdo.</p></div>
       <div class="tarjeta"><div class="num">3 · La entrega</div><h4>Una frase</h4><p>Cada grupo dice una sola respuesta, en voz alta.</p></div>
@@ -542,8 +588,8 @@ ol.li li b{color:#fff}
     <div class="kick">Taller práctico</div>
     <h2 class="tit chico" style="margin-bottom:0">Las tres tareas</h2>
     <div class="regla"></div>
-    <p class="sub" style="font-size:20px;margin-top:18px">Cada grupo toma <b>una</b>. No hay que hacer las tres.</p>
-    <div class="tarjetas c3" style="margin-top:26px">
+    <p class="sub" style="font-size:24px;margin-top:15px">Cada grupo toma <b>una</b>. No hay que hacer las tres.</p>
+    <div class="tarjetas c3" style="margin-top:22px">
       <div class="tarjeta" style="border-top-color:var(--oro)">
         <div class="num" style="color:var(--oro)">Tarea 1</div>
         <h4>El dinero, con honestidad</h4>
@@ -574,7 +620,7 @@ ol.li li b{color:#fff}
     <div class="kick">Taller práctico · para los que se atoran</div>
     <h2 class="tit chico" style="margin-bottom:0">Preguntas guía</h2>
     <div class="regla"></div>
-    <ul class="li" style="margin-top:14px">
+    <ul class="li" style="margin-top:12px">
       <li style="margin-bottom:8px">Si el Art. 11 condiciona el cargo al <b>diezmo efectivo y sistemático</b>, ¿es eso una
       regla espiritual o una forma de comprar el derecho a gobernar?</li>
       <li style="margin-bottom:8px">El Art. 12 e pide <b>obedecer</b> a las autoridades. ¿Qué hace un miembro cuando la
@@ -584,7 +630,7 @@ ol.li li b{color:#fff}
       <li style="margin-bottom:8px">El inciso i somete al miembro a la disciplina. ¿Es compatible con el «respetar a las
       autoridades» del inciso e?</li>
     </ul>
-    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:18px">
+    <div class="aviso" style="background:#eef7fd;border-left-color:var(--azul);color:#0e3c5c;margin-top:15px">
       <b>Regla del taller:</b> se puede discrepar del Artículo 12, pero hay que discrepar
       <b>por escrito</b>. Lo que no vale es inventar un deber en la sala.
     </div>
@@ -596,17 +642,17 @@ ol.li li b{color:#fff}
     <div class="kick">Taller práctico · cierre</div>
     <h2 class="tit chico" style="margin-bottom:0">Cada grupo, una frase</h2>
     <div class="regla"></div>
-    <ol class="li" style="margin-top:30px">
+    <ol class="li" style="margin-top:26px">
       <li>El grupo habla. <b>Un minuto</b>, no más.</li>
       <li>Alguien de la congregación repite la respuesta en voz alta, para que quede escrito en el
       acta.</li>
       <li>Lo que salga de aquí <b>se lleva al Consitorio</b>. No es un ejercicio de clase: es una
       lista de cosas por hacer.</li>
     </ol>
-    <div class="vers" style="font-size:23px;margin-top:32px;max-width:940px;color:#c9d6e3">
+    <div class="vers" style="font-size:28px;margin-top:27px;max-width:940px;color:#c9d6e3">
       «Pero tú, sé sobrio en todas las cosas, sufre penalidades, haz el trabajo de un evangelista, cumple tu ministerio.»
     </div>
-    <div class="ref" style="margin-top:18px">2 Timoteo 4.5</div>
+    <div class="ref" style="margin-top:15px">2 Timoteo 4.5</div>
     <div class="credito">Textos bíblicos: Nueva Biblia de las Américas © Sociedades Bíblicas Unidas</div>
     <div class="pie"><span>Iglesia Presbiteriana Divino Salvador</span><span>Lección 4 · Taller</span></div>
   </section></div></div>
