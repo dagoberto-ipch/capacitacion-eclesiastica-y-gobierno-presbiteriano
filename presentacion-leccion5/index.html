@@ -781,10 +781,26 @@ ol.li li b{color:#fff}
   // ---- escalado 16:9 ----
   function escalar(){
     var st = document.getElementById('stage');
-    var k = Math.min(window.innerWidth/1280, window.innerHeight/720);
+    // En el celular hay que medir con visualViewport y no con window.innerHeight.
+    // innerHeight incluye la franja que tapa la barra de direcciones y los
+    // botones de abajo, asi que da mas alto del que se ve: la lamina salia
+    // escalada de mas y su parte de abajo se perdia. En computadora no se nota,
+    // porque ahi innerHeight si es el alto visible.
+    var vv = window.visualViewport;
+    var w = vv ? vv.width  : window.innerWidth;
+    var h = vv ? vv.height : window.innerHeight;
+    var k = Math.min(w/1280, h/720);
     st.style.transform = 'scale('+k+')';
   }
   window.addEventListener('resize', escalar);
+  // La barra del navegador se oculta y aparece al desplazarse sin que salte
+  // 'resize', asi que con visualViewport hay que escucharla a ella.
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', escalar);
+    window.visualViewport.addEventListener('scroll', escalar);
+  }
+  // Al girar el celular el alto cambia un rato despues, no en el acto.
+  window.addEventListener('orientationchange', function(){ setTimeout(escalar, 300); });
 
   // ---- teclado ----
   document.addEventListener('keydown', function(e){
