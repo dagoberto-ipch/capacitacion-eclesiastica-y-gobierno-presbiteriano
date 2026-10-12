@@ -249,6 +249,40 @@ ol.li li b{color:#fff}
 .aprieta-4 .nota { margin-top:13px !important; }
 .aprieta-4 .tit { margin-top:8px !important; }
 .aprieta-4 .regla { margin:14px 0 !important; }
+/* ---------- version vertical (celular) ----------
+   Con ?vertical=1 la lamina se dibuja en 9:16, a 1080x1920, que es la forma de
+   un celular. Es la version para leer en el telefono y para los pantallazos; la
+   de clase sigue en 16:9, que es la que necesita el data show.
+   Las rejillas pasan a una sola columna: en una pantalla angosta, dos tarjetas
+   al lado quedan de 500 px y el texto se parte en mas lineas.
+   Los cuerpos de letra son mas grandes que los de la forma de clase a proposito:
+   aqui la lamina es de 1080 de ancho y en la clase es de 1280, asi que 38 px
+   sobre 1080 ocupa mas pantalla que 29 px sobre 1280. En el celular se lee mas
+   grande que en el data show, que es lo que se queria. */
+html.vertical .slide{width:1080px;height:1920px;padding:64px 68px}
+html.vertical #stage{width:1080px;height:1920px}
+html.vertical .kick{font-size:22px}
+html.vertical .tit.big{font-size:78px}
+html.vertical .tit.med{font-size:64px}
+html.vertical .tit.chico{font-size:52px}
+html.vertical .sub{font-size:32px;line-height:1.5}
+html.vertical ul.li{margin-top:30px}
+html.vertical ul.li li{font-size:38px;margin-bottom:28px}
+html.vertical ol.li{margin-top:30px}
+html.vertical ol.li li{font-size:38px;margin-bottom:30px}
+html.vertical ol.li li::before{font-size:28px}
+html.vertical ul.li.chico li{font-size:34px;margin-bottom:22px}
+html.vertical .vers{font-size:46px;line-height:1.45;margin-top:32px}
+html.vertical .ref{font-size:24px;margin-top:32px}
+html.vertical .nota{font-size:29px;margin-top:30px}
+html.vertical .tarjetas{margin-top:34px;gap:24px}
+html.vertical .tarjetas.c2,html.vertical .tarjetas.c3,html.vertical .tarjetas.c5{grid-template-columns:1fr !important}
+html.vertical .tarjeta{padding:26px 28px 28px}
+html.vertical .tarjeta .num{font-size:19px;margin-bottom:14px}
+html.vertical .tarjeta h4{font-size:33px;margin-bottom:12px}
+html.vertical .tarjeta p{font-size:27px;line-height:1.55}
+html.vertical .aviso{font-size:32px;padding:28px 32px;margin-top:32px}
+html.vertical .regla{margin:34px 0}
 </style>
 </head>
 <body>
@@ -697,6 +731,18 @@ ol.li li b{color:#fff}
   //  una tira vertical con todas las laminas apiladas, a 1280x720 exactos y sin
   //  la interfaz. Es lo que captura capturar.ps1 para armar las imagenes del
   //  PowerPoint y el PDF: una sola pasada del navegador en vez de veinte.
+  // La forma vertical es la de celular: 1080x1920. La de clase sigue en 16:9.
+  var vertical = /[?&]vertical/.test(location.search);
+  if (vertical) {
+      document.documentElement.classList.add('vertical');
+      // El @page no se puede condicionar con una clase como el resto del CSS,
+      // asi que se inyecta desde aqui: sin esto el PDF sale con las paginas de
+      // 1280x720 y la lamina vertical queda con franjas.
+      var estiloPagina = document.createElement('style');
+      estiloPagina.textContent = '@page{size:1080px 1920px;margin:0}';
+      document.head.appendChild(estiloPagina);
+    }
+
   var capturando = /[?&]captura/.test(location.search);
   if (capturando) {
     document.documentElement.style.background = '#fff';
@@ -704,14 +750,15 @@ ol.li li b{color:#fff}
     var w = document.getElementById('wrap');
     w.style.cssText = 'position:static;display:block;inset:auto';
     var st = document.getElementById('stage');
-    st.style.cssText = 'position:static;width:1280px;height:auto;transform:none;box-shadow:none';
+    var AN = vertical ? 1080 : 1280, AL = vertical ? 1920 : 720;
+    st.style.cssText = 'position:static;width:'+AN+'px;height:auto;transform:none;box-shadow:none';
     ['prog','cont','ayuda','gral'].forEach(function(id){
       var e = document.getElementById(id);
       if (e) e.style.display = 'none';
     });
     slides.forEach(function(s){
       s.classList.add('on');
-      s.style.cssText = 'display:flex;position:relative;inset:auto;width:1280px;height:720px;animation:none;flex:0 0 auto';
+      s.style.cssText = 'display:flex;position:relative;inset:auto;width:'+AN+'px;height:'+AL+'px;animation:none;flex:0 0 auto';
     });
     // Sin la animacion de entrada, para que ninguna lamina salga a medio pintar.
     var estilos = document.createElement('style');
@@ -748,7 +795,8 @@ ol.li li b{color:#fff}
     var vv = window.visualViewport;
     var w = vv ? vv.width  : window.innerWidth;
     var h = vv ? vv.height : window.innerHeight;
-    var k = Math.min(w/1280, h/720);
+    var AN = vertical ? 1080 : 1280, AL = vertical ? 1920 : 720;
+    var k = Math.min(w/AN, h/AL);
     st.style.transform = 'scale('+k+')';
   }
   window.addEventListener('resize', escalar);
