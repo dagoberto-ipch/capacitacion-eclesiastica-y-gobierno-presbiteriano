@@ -283,6 +283,42 @@ html.vertical .tarjeta h4{font-size:33px;margin-bottom:12px}
 html.vertical .tarjeta p{font-size:27px;line-height:1.55}
 html.vertical .aviso{font-size:32px;padding:28px 32px;margin-top:32px}
 html.vertical .regla{margin:34px 0}
+
+/* La portada traia sus medidas puestas en linea, con numeros pensados para los
+   1280x720 de la forma de clase: en vertical el bloque quedaba pegado arriba
+   con dos tercios de pantalla vacia. Aqui se anulan esos numeros y se centra el
+   bloque, que es lo que se ve bien en una portada. */
+html.vertical .slide[data-t="Portada"]{justify-content:center}
+html.vertical .slide[data-t="Portada"] div[style*="text-align:center"]{margin-top:0 !important}
+html.vertical .slide[data-t="Portada"] .tit{font-size:64px !important;max-width:940px !important}
+html.vertical .slide[data-t="Portada"] .sub{font-size:30px !important;max-width:900px !important}
+
+/* ---- navegacion del celular ----
+   Dos botones redondos y grandes, abajo y a los lados: es donde llega el pulgar
+   cuando se sostiene el telefono. Tocar la pantalla ya avanzaba, pero en vertical
+   "tocar a la derecha" queda lejos del pulgar y no hay nada que diga que se
+   pueda tocar. Un boton de 88 px es de los que se prensa sin mirar.
+   Solo en la forma vertical: en la de clase se avanza con el teclado o con el
+   mando, y un boton abajo taparia el pie de la lamina. */
+#celnav{display:none}
+html.vertical #celnav{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  padding:16px 26px calc(16px + env(safe-area-inset-bottom));
+  background:rgba(5,16,31,.62);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+html.vertical #celnav button{
+  flex:0 0 auto;width:88px;height:88px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.10);color:#fff;
+  font-size:48px;line-height:1;cursor:pointer;font-family:inherit;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+html.vertical #celnav button:disabled{opacity:.22}
+html.vertical #celnav button:active{background:rgba(255,255,255,.28)}
+html.vertical #celnav .celcont{color:#fff;font-size:24px;letter-spacing:.08em;opacity:.85}
+html.vertical.con-nav .pie{bottom:138px;left:68px;right:68px}
 </style>
 </head>
 <body>
@@ -701,6 +737,7 @@ html.vertical .regla{margin:34px 0}
       document.head.appendChild(estiloPagina);
     }
 
+  var actualizarCel = function(){};
   var capturando = /[?&]captura/.test(location.search);
   if (capturando) {
     document.documentElement.style.background = '#fff';
@@ -731,11 +768,37 @@ html.vertical .regla{margin:34px 0}
     return;   // en modo captura no se registra nada mas
   }
 
-  function pintar(){
+    // ---- navegacion del celular ----
+  // Solo en la forma vertical, y nunca en modo captura: en captura la pagina se
+  // convierte en una tira de veinte laminas para el PDF y el PowerPoint, y el
+  // boton se dibujaria en cada una.
+  if (vertical) {
+    var celnav = document.createElement('div');
+    celnav.id = 'celnav';
+    document.documentElement.classList.add('con-nav');
+    celnav.innerHTML =
+      '<button id="celAnt" aria-label="Lamina anterior">&#8249;</button>' +
+      '<span class="celcont" id="celCont"></span>' +
+      '<button id="celSig" aria-label="Lamina siguiente">&#8250;</button>';
+    document.body.appendChild(celnav);
+    var bAnt = document.getElementById('celAnt');
+    var bSig = document.getElementById('celSig');
+    var cCel = document.getElementById('celCont');
+    bAnt.addEventListener('click', function(e){ e.stopPropagation(); ant(); });
+    bSig.addEventListener('click', function(e){ e.stopPropagation(); sig(); });
+    actualizarCel = function(){
+      if (!cCel) return;
+      cCel.textContent = (idx+1) + ' / ' + total;
+      bAnt.disabled = (idx === 0);
+      bSig.disabled = (idx === total-1);
+    };
+  }
+function pintar(){
     slides.forEach(function(s,i){ s.classList.toggle('on', i===idx); });
     minis.forEach(function(m,i){ m.classList.toggle('cur', i===idx); });
     document.getElementById('cont').textContent = (idx+1)+' / '+total;
     document.getElementById('prog').style.width = ((idx+1)/total*100)+'%';
+      actualizarCel();
     try{ location.hash = 'slide-'+(idx+1); }catch(e){}
   }
   function ir(i){ idx = Math.max(0, Math.min(total-1, i)); pintar(); }
